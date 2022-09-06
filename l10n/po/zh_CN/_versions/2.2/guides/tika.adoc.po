@@ -160,7 +160,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/tika.adoc:79
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/tika.adoc:90
@@ -329,12 +329,12 @@ msgstr ""
 #: upstream/_versions/2.2/guides/tika.adoc:165
 #, no-wrap
 msgid "Run the application"
-msgstr ""
+msgstr "运行应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/tika.adoc:168
 msgid "Now we are ready to run our application. Use:"
-msgstr ""
+msgstr "现在我们准备运行我们的应用程序。使用："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/tika.adoc:172
@@ -345,13 +345,13 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/tika.adoc:175
 msgid "and you should see output similar to:"
-msgstr ""
+msgstr "而你应该看到类似的输出："
 
 #. type: Block title
 #: upstream/_versions/2.2/guides/tika.adoc:176
 #, no-wrap
 msgid "quarkus:dev Output"
-msgstr ""
+msgstr "quarkus:dev 输出"
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/tika.adoc:194
@@ -404,7 +404,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/tika.adoc:212
 #, no-wrap
 msgid "Building a native executable"
-msgstr ""
+msgstr "构建一个本地可执行文件"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/tika.adoc:216

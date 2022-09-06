@@ -796,7 +796,7 @@ msgstr "测试"
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:455
 msgid "Start by adding the following dependencies to your test project:"
-msgstr ""
+msgstr "首先在你的测试项目中添加以下依赖项："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:468
@@ -818,12 +818,12 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:471
 #, no-wrap
 msgid "Wiremock"
-msgstr ""
+msgstr "Wiremock"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:474
 msgid "Add the following dependencies to your test project:"
-msgstr ""
+msgstr "在你的测试项目中添加以下依赖项："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:482
@@ -980,7 +980,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:560
 #, no-wrap
 msgid "Keycloak"
-msgstr ""
+msgstr "Keycloak"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:563
@@ -991,7 +991,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:564
 #, no-wrap
 msgid "How to check the errors in the logs"
-msgstr ""
+msgstr "如何检查日志中的错误"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:567
@@ -1265,7 +1265,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:734
 #, no-wrap
 msgid "References"
-msgstr ""
+msgstr "参考文献"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-openid-connect-client.adoc:737

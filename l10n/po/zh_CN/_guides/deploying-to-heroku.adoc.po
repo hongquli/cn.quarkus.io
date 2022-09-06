@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-06-29 15:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr "简介"
 #. type: Plain text
 #: upstream/_guides/deploying-to-heroku.adoc:32
 #, fuzzy
-msgid "Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.  It supports several languages like Java, Ruby, Node.js, Scala, Clojure, Python, PHP, and Go.  In addition it offers a container registry that can be used to deploy prebuilt container images."
+msgid "Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.  It supports several languages like Java, Ruby, Node.js, Scala, Clojure, Python, PHP, and Go.  In addition, it offers a container registry that can be used to deploy prebuilt container images."
 msgstr "Heroku是一个平台即服务（PaaS），使开发者能够完全在云中构建、运行和操作应用程序。它支持多种语言，如Java、Ruby、Node.js、Scala、Clojure、Python、PHP和Go。此外，它还提供了一个容器注册表，可用于部署预先构建的容器镜像。"
 
 #. type: Plain text
@@ -149,12 +149,12 @@ msgstr "本指南将以《 link:getting-started.html[入门指南》] 中开发�
 #: upstream/_guides/deploying-to-heroku.adoc:50
 #, fuzzy
 msgid "Make sure you have the getting-started application at hand, or clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]. The solution is located in the `getting-started` directory."
-msgstr "请确保你手头有getting-started应用程序，或者克隆Git仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。该解决方案位于 `getting-started` 目录中。"
+msgstr "请确保你手头有getting-started应用程序，或者克隆Git仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。该解决方案位于 `getting-started` 目录中。"
 
 #. type: Plain text
 #: upstream/_guides/deploying-to-heroku.adoc:53
 #, fuzzy
-msgid "Heroku can react on changes in your repository, run CI and redeploy your application when your code changes.  Therefore we start with a valid repository already."
+msgid "Heroku can react on changes in your repository, run CI and redeploy your application when your code changes.  Therefore, we start with a valid repository already."
 msgstr "Heroku可以对你的版本库的变化做出反应，当你的代码发生变化时，运行CI并重新部署你的应用程序。因此，我们从一个有效的版本库开始。"
 
 #. type: Plain text

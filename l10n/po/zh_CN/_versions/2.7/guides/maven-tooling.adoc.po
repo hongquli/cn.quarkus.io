@@ -244,7 +244,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:75
 #, no-wrap
 msgid "`true`"
-msgstr ""
+msgstr "`true` "
 
 #. type: Table
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:77
@@ -338,7 +338,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:145
 msgid "Hit `CTRL+C` to stop the application."
-msgstr ""
+msgstr "使用 `CTRL+C` 来停止应用程序。"
 
 #. type: delimited block =
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:149
@@ -754,7 +754,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:372
 #, no-wrap
 msgid "Building a native executable"
-msgstr ""
+msgstr "构建一个本地可执行文件"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:375
@@ -1577,7 +1577,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:905
 #, no-wrap
 msgid "`false`"
-msgstr ""
+msgstr "`false` "
 
 #. type: Table
 #: upstream/_versions/2.7/guides/maven-tooling.adoc:907

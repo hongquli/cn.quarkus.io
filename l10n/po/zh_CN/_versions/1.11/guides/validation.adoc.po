@@ -151,7 +151,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/validation.adoc:67
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/1.11/guides/validation.adoc:74
@@ -499,7 +499,7 @@ msgstr ""
 #: upstream/_versions/1.11/guides/validation.adoc:256
 #, no-wrap
 msgid "Run the application"
-msgstr ""
+msgstr "运行应用程序"
 
 #. type: Plain text
 #: upstream/_versions/1.11/guides/validation.adoc:259

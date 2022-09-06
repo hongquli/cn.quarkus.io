@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:59+0000\n"
+"POT-Creation-Date: 2022-08-17 03:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -287,7 +287,8 @@ msgstr "表达式"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/config-yaml.adoc:160
-msgid "The YAML format also supports xref:config-reference.adoc#expressions[expressions], using the same format as Java Properties:"
+#, fuzzy
+msgid "The YAML format also supports xref:config-reference.adoc#property-expressions[property expressions], using the same format as Java Properties:"
 msgstr "YAML格式同时也支持 link:config-reference.html#expressions[表达式] ，使用与Java Properties相同的格式:"
 
 #. type: delimited block -
@@ -312,7 +313,8 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/config-yaml.adoc:175
-msgid "Note that you can reference nested properties using the `.` (dot) separator as in `{x.factor}`."
+#, fuzzy
+msgid "Note that you can reference nested properties using the `.` (dot) separator as in `${x.factor}`."
 msgstr "注意，你可以使用 `.` (点)分隔符来引用嵌套的属性，如 `{x.factor}` 。"
 
 #. type: Title ==
@@ -323,7 +325,8 @@ msgstr "外部application.yaml 文件"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/config-yaml.adoc:180
-msgid "The `application.yaml` file may also be placed in `config/application.yaml` to specialize the runtime configuration. The file has to be present in the root of the working directoryrelative to the Quarkus application runner:"
+#, fuzzy
+msgid "The `application.yaml` file may also be placed in `config/application.yaml` to specialize the runtime configuration. The file has to be present in the root of the working directory relative to the Quarkus application runner:"
 msgstr "`application.yaml` 文件也可以放在 `config/application.yaml` 中，以专门实现运行时的配置。该文件必须存在于相对Quarkus应用运行程序的工作目录的根目录中:"
 
 #. type: delimited block -

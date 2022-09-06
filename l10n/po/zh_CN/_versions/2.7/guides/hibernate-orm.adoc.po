@@ -145,7 +145,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:52
 msgid "For instance:"
-msgstr ""
+msgstr "比如："
 
 #. type: Block title
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:54
@@ -365,7 +365,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:166
 msgid "Make sure to wrap methods modifying your database (e.g. `entity.persist()`) within a transaction. Marking a CDI bean method `@Transactional` will do that for you and make that method a transaction boundary. We recommend doing so at your application entry point boundaries like your REST endpoint controllers."
-msgstr ""
+msgstr "请确保修改数据库的方法（例如： `entity.persist()` ）处于同一个事务中。给一个CDI bean方法增加 `@Transactional` 注解，可以确保该方法即事务边界。我们建议在应用端点的边界这样做，比如REST端点的Controller。"
 
 #. type: Title ===
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:168
@@ -898,7 +898,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:448
 #, no-wrap
 msgid "Defining entities in external projects or jars"
-msgstr ""
+msgstr "在外部项目或jar中定义实体"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:452
@@ -1379,7 +1379,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:713
 #, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "指标"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:718
@@ -1602,7 +1602,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:821
 #, no-wrap
 msgid "Writing the application"
-msgstr ""
+msgstr "编写应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/hibernate-orm.adoc:824

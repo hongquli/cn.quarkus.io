@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-08-31 11:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,163 +21,1544 @@ msgstr ""
 #. https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 #. type: Title =
 #: upstream/_guides/redis-reference.adoc:6
-#, no-wrap
-msgid "Redis Reference Guide"
+#, fuzzy, no-wrap
+msgid "Redis Extension Reference Guide"
 msgstr "Redis参考指南"
 
-#. type: Title ==
-#: upstream/_guides/redis-reference.adoc:14
-#, no-wrap
-msgid "How to use custom Redis Commands"
-msgstr "如何使用自定义Redis命令"
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:15
+#, fuzzy
+msgid "Redis is an in-memory data store used as a database, cache, streaming engine, and message broker.  The Quarkus Redis extension allows integrating Quarkus applications with Redis."
+msgstr "Redis是一个内存数据存储，被用作数据库、缓存、流媒体引擎和消息代理。Quarkus Redis扩展允许将Quarkus应用程序与Redis集成。"
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:17
-msgid "As the list of commands which are supported out-of-box by both https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] and https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] depends on what is available in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`], then there might be case when you need a command which is not (yet) available via https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`]."
-msgstr "https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 和 https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 开箱即支持的命令列表取决于 https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 所支持的命令，那么可能会出现你需要用的命令 https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] （还）不支持的情况。"
+#: upstream/_guides/redis-reference.adoc:18
+#, fuzzy
+msgid "To use this extension, the user must be familiar with Redis, especially understanding the mechanism of commands and how they are organized.  Typically, we recommend:"
+msgstr "要使用这个扩展，用户必须熟悉Redis，特别是了解命令的机制和它们的组织方式。通常情况下，我们建议。"
 
 #. type: Plain text
 #: upstream/_guides/redis-reference.adoc:20
-msgid "In such case (if you don't want to wait for the new command to be supported in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`]), you can implement it in either https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] or https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`].  In order to do so, you will need:"
-msgstr "在这种情况下，如果你不想等到未来版本的 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 支持这些命令，可以在 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 或 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 中实现它们。实现自定义的Redis命令需要："
+#, fuzzy
+msgid "The https://try.redis.io/[interactive tutorial] introducing Redis."
+msgstr "介绍Redis的 link:https://try.redis.io/[互动教程] 。"
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:22
-msgid "Generate a new `Command` based on the nodejs code available in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] repository:"
-msgstr "使用 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 仓库中的Nodejs代码，生成一个新的 `Command`。"
+#: upstream/_guides/redis-reference.adoc:21
+#, fuzzy
+msgid "The https://redis.io/commands/[command references] explains Redis commands and contains links to reference documentation."
+msgstr "link:https://redis.io/commands/[命令参考] 解释了Redis命令，并包含参考文档的链接。"
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:24
-msgid "If you don't have a Redis service running locally, you can run Redis in a Docker container:"
-msgstr "如果你没有本地运行的Redis服务，可以在Docker容器中运行Redis："
+#: upstream/_guides/redis-reference.adoc:23
+#, fuzzy
+msgid "This extension provides imperative and reactive APIs and low-level and high-level (type-safe) clients."
+msgstr "这个扩展提供了命令式和反应式API以及低级和高级（类型安全）客户端。"
 
-#. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:27
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:25
 #, no-wrap
-msgid "docker run --name redis -p 7006:6379 -d redis\n"
-msgstr ""
+msgid "Installation"
+msgstr "安装"
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:30
-msgid "Next, while being in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] root folder execute:"
-msgstr "然后，在 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 的根目录下执行以下命令："
+#: upstream/_guides/redis-reference.adoc:29
+#, fuzzy
+msgid "If you want to use this extension, you need to add the `io.quarkus:quarkus-redis` extension first.  In your `pom.xml` file, add:"
+msgstr "如果你想使用这个扩展，你需要先添加 `io.quarkus:quarkus-redis` 扩展。在你的 `pom.xml` 文件中，添加。"
+
+#. type: Block title
+#: upstream/_guides/redis-reference.adoc:31
+#, no-wrap
+msgid "pom.xml"
+msgstr "pom.xml"
 
 #. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:36
+#: upstream/_guides/redis-reference.adoc:37
 #, no-wrap
 msgid ""
-"cd tools\n"
-"npm i\n"
-"npm start\n"
+"<dependency>\n"
+"    <groupId>io.quarkus</groupId>\n"
+"    <artifactId>quarkus-redis-client</artifactId>\n"
+"</dependency>\n"
 msgstr ""
 
-#. type: Plain text
-#: upstream/_guides/redis-reference.adoc:39
-msgid "The above sequence of commands should update the https://github.com/vert-x3/vertx-redis-client/blob/master/src/main/java/io/vertx/redis/client/Command.java[`Command.java`] file, so it includes all the possible commands supported by a particular Redis version."
-msgstr "以上的几行命令会更新 link:https://github.com/vert-x3/vertx-redis-client/blob/master/src/main/java/io/vertx/redis/client/Command.java[`Command.java`] 文件，使其包含指定版本的 Redis 的所有支持的命令。"
+#. type: Block title
+#: upstream/_guides/redis-reference.adoc:40
+#, no-wrap
+msgid "build.gradle"
+msgstr "build.gradle"
 
 #. type: delimited block -
 #: upstream/_guides/redis-reference.adoc:43
 #, no-wrap
-msgid "Command ZUNION = Command.create(\"zunion\", -3, 0, 0, 0, false, true, true, false);\n"
+msgid "implementation(\"io.quarkus:quarkus-redis\")\n"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:47
-msgid "This definition is very important as we will have to use it in the service.  Once we have this `Command` we can start to update the redis-client extension by:"
-msgstr "我们需要在服务中使用这个Redis命令，因此这个定义非常重要。有了这个 `Command` 定义后，我们就可以开始更新redis-client扩展。"
-
-#. type: Plain text
-#: upstream/_guides/redis-reference.adoc:49
-msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] interface, i.e.:"
-msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 接口，即："
+#: upstream/_guides/redis-reference.adoc:46
+#, fuzzy
+msgid "With this dependency, you can then inject Redis clients or _datasource_ (high-level, type-safe API), such as:"
+msgstr "有了这个依赖关系，你就可以注入Redis客户端或 _数据源_ （高级别的、类型安全的API），例如。"
 
 #. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:53
+#: upstream/_guides/redis-reference.adoc:50
 #, no-wrap
-msgid "Response zunion(List<String> args);\n"
+msgid "import io.quarkus.redis.datasource.RedisDataSource;\n"
 msgstr ""
 
-#. type: Plain text
-#: upstream/_guides/redis-reference.adoc:56
-msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/RedisClientImpl.java[`RedisClientImpl`], i.e.:"
-msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/RedisClientImpl.java[`RedisClientImpl`] ，即："
-
 #. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:66
+#: upstream/_guides/redis-reference.adoc:54
 #, no-wrap
 msgid ""
-"@Override\n"
-"public Response zunion(List<String> args) {\n"
-"    final io.vertx.mutiny.redis.client.Command ZUNION = Command.create(\"zunion\", -3, 0, 0, 0, false, true, true, false);\n"
-"    final io.vertx.mutiny.redis.client.Request requestWithArgs = args.stream().reduce(\n"
-"            io.vertx.mutiny.redis.client.Request.cmd(ZUNION),\n"
-"            (request, s) -> request.arg(s),\n"
-"            (request, request2) -> request);\n"
-msgstr ""
-
-#. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:69
-#, no-wrap
-msgid ""
-"    return await(mutinyRedis.send(requestWithArgs));\n"
-"}\n"
+"// ...\n"
+"@Inject RedisAPI lowLevelClient;\n"
+"@Inject RedisDataSource highLevelApi;\n"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:72
-msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] interface, i.e.:"
-msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 接口，即："
+#: upstream/_guides/redis-reference.adoc:57
+#, fuzzy
+msgid "More details about the various APIs offered by the quarkus-redis extension are available in the <<apis>> section."
+msgstr "关于quarkus-redis扩展提供的各种API的更多细节可在 link:#apis[[apis]] 部分找到。"
 
-#. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:76
-#, no-wrap
-msgid "Uni<Response> zunion(List<String> args);\n"
-msgstr ""
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:59
+#, fuzzy, no-wrap
+msgid "One extension, multiple APIs"
+msgstr "一个扩展，多个API"
 
-#. type: delimited block -
-#: upstream/_guides/redis-reference.adoc:78
-#, no-wrap
-msgid "Response zunionAndAwait(List<String> args);\n"
-msgstr ""
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:62
+#, fuzzy
+msgid "This extension provides multiple ways to interact with Redis:"
+msgstr "这个扩展提供了与Redis互动的多种方式。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:67
+#, fuzzy
+msgid "the _low-level_ Vert.x client: it's a fully reactive, non-blocking, and asynchronous client.  More details on https://vertx.io/docs/vertx-redis-client/java/[the Vert.x Redis Client documentation].  Two APIs are exposed: `io.vertx.redis.client.Redis`, and `io.vertx.redis.client.RedisAPI`.  You will generally use the latter, except if you need to manage connections yourself."
+msgstr " _低级别的_ Vert.x客户端：它是一个完全反应式的、非阻塞的、异步的客户端。更多细节请看 link:https://vertx.io/docs/vertx-redis-client/java/[Vert.x Redis客户端文档] 。有两个API是公开的。 `io.vertx.redis.client.Redis` `io.vertx.redis.client.RedisAPI` 你一般会使用后者，除非你需要自己管理连接。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:70
+#, fuzzy
+msgid "the _low-level_ Mutiny variant of the Vert.x API: Unlike the previous one, it exposes a Mutiny API and provides both reactive and imperative methods (suffixed with `andAwait()`).  Two APIs are exposed: `io.vertx.mutiny.redis.client.Redis` and `io.vertx.mutiny.redis.client.RedisAPI`.  You will generally use the latter, except if you need to manage connections yourself."
+msgstr "是Vert.x API的 _低级_ Mutiny变体。与之前的不同，它暴露了一个Mutiny API，并提供了反应式和命令式方法（后缀为 `andAwait()` ）。暴露了两个API： `io.vertx.mutiny.redis.client.Redis` 和 `io.vertx.mutiny.redis.client.RedisAPI` 。你一般会使用后者，除非你需要自己管理连接。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:74
+#, fuzzy
+msgid "a _high-level_ reactive data source: A type-safe, high-level API to interact with Redis.  This API is fully reactive and asynchronous.  It exposes a Mutiny API.  It exposes the `io.quarkus.redis.datasource.ReactiveRedisDataSource` interface."
+msgstr "一个 _高水平的_ 反应式数据源。一个类型安全的高级别API，用于与Redis交互。这个API是完全反应式和异步的。它暴露了一个Mutiny API。它暴露了 `io.quarkus.redis.datasource.ReactiveRedisDataSource` 接口。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:77
+#, fuzzy
+msgid "a _high-level_ imperative data source: A type-safe, high-level API to interact with Redis.  It is the imperative variant of the reactive data source.  It exposes the `io.quarkus.redis.datasource.RedisDataSource` interface."
+msgstr "一个 _高层次_ 的指令性数据源。一个类型安全的高层次API来与Redis交互。它是反应式数据源的必要变体。它暴露了 `io.quarkus.redis.datasource.RedisDataSource` 接口。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:79
+#, fuzzy
+msgid "To help you select the suitable API for you, here are some recommendations:"
+msgstr "为了帮助你选择适合你的API，这里有一些建议。"
 
 #. type: Plain text
 #: upstream/_guides/redis-reference.adoc:81
-msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/ReactiveRedisClientImpl.java[`ReactiveRedisClientImpl`], i.e.:"
-msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/ReactiveRedisClientImpl.java[`ReactiveRedisClientImpl`] ，即："
+#, fuzzy
+msgid "If you are building an imperative (_classic_) Quarkus application integrating with Redis: use `io.quarkus.redis.datasource.RedisDataSource`."
+msgstr "如果你正在构建一个与Redis集成的命令式 _（经典_ ）Quarkus应用程序：使用 `io.quarkus.redis.datasource.RedisDataSource` 。"
 
-#. type: delimited block -
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:82
+#, fuzzy
+msgid "If you are building a reactive Quarkus application integrating with Redis: use `io.quarkus.redis.datasource.ReactiveRedisDataSource`."
+msgstr "如果你正在建立一个与Redis集成的反应式Quarkus应用程序：使用 `io.quarkus.redis.datasource.RedisReactiveDataSource` 。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:83
+#, fuzzy
+msgid "If you need fine-grain control, or execute commands in a generic way: use `io.vertx.mutiny.redis.client.RedisAPI`"
+msgstr "如果你需要细粒度的控制，或以通用方式执行命令：使用 `io.vertx.mutiny.redis.client.RedisAPI` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:84
+#, fuzzy
+msgid "If you have existing Vert.x code, use `io.vertx.redis.client.RedisAPI`"
+msgstr "如果你有现有的Vert.x代码，使用 `io.vertx.redis.client.RedisAPI` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:85
+#, fuzzy
+msgid "If you need to emit custom commands, you can either use the data sources (reactive or imperative) or the `io.vertx.mutiny.redis.client.Redis`."
+msgstr "如果你需要发射自定义命令，你可以使用数据源（反应式或命令式）或 `io.vertx.mutiny.redis.client.Redis` 。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:87
+#, fuzzy, no-wrap
+msgid "Default and named clients"
+msgstr "默认和命名的客户"
+
+#. type: Plain text
 #: upstream/_guides/redis-reference.adoc:91
-#, no-wrap
-msgid ""
-"@Override\n"
-"public Uni<Response> zunion(List<String> args) {\n"
-"    final Command ZUNION = Command.create(\"zunion\", -3, 0, 0, 0, false, true, true, false);\n"
-"    final io.vertx.mutiny.redis.client.Request requestWithArgs = args.stream().reduce(\n"
-"            io.vertx.mutiny.redis.client.Request.cmd(ZUNION),\n"
-"            (request, s) -> request.arg(s),\n"
-"            (request, request2) -> request);\n"
-msgstr ""
+#, fuzzy
+msgid "This extension lets you configure a _default_ Redis client/data sources or _named_ ones.  The latter is essential when you need to connect to multiple Redis instances."
+msgstr "这个扩展允许你配置一个 _默认的_ Redis客户端/数据源或 _命名的_ 客户端/数据源。当你需要连接到多个Redis实例时，后者是必不可少的。"
 
-#. type: delimited block -
+#. type: Plain text
 #: upstream/_guides/redis-reference.adoc:94
-#, no-wrap
-msgid ""
-"    return mutinyRedis.send(requestWithArgs);\n"
-"}\n"
-msgstr ""
+#, fuzzy
+msgid "The default connection is configured using the `quarkus.redis.*` properties.  For example, to configure the default Redis client, use:"
+msgstr "默认连接是使用 `quarkus.redis.*` 属性配置的。例如，要配置默认的Redis客户端，使用。"
 
 #. type: delimited block -
 #: upstream/_guides/redis-reference.adoc:99
 #, no-wrap
+msgid "quarkus.redis.hosts=redis://localhost/\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:102
+#, fuzzy
+msgid "When using the default connection, you can inject the various APIS using a _plain_ `@Inject`:"
+msgstr "当使用默认连接时，你可以使用一个 _普通的_ `@Inject` ，注入各种APIS。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:112
+#, no-wrap
 msgid ""
-"@Override\n"
-"public Response zunionAndAwait(List<String> args) {\n"
-"    return zunion(args).await().indefinitely();\n"
+"@ApplicationScoped\n"
+"public class RedisExample {\n"
+"    @Inject ReactiveRedisDataSource reactiveDataSource;\n"
+"    @Inject RedisDataSource redisDataSource;\n"
+"    @Inject RedisAPI redisAPI;\n"
+"    // ...\n"
 "}\n"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/redis-reference.adoc:101
-msgid "Please note that it's using the `MutinyRedis` class which does asynchronous calls to Redis."
-msgstr "请注意，上述代码使用 `MutinyRedis` 类异步调用Redis命令"
+#: upstream/_guides/redis-reference.adoc:115
+#, fuzzy
+msgid "In general, you inject a single one; the previous snippet is just an example."
+msgstr "一般来说，你注入一个；前面的片段只是一个例子。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:118
+#, fuzzy
+msgid "_Named_ clients are configured using the `quarkus.redis.<name>.*` properties:"
+msgstr " _命名的_ 客户端是使用 `quarkus.redis.<name>.*` 属性配置的。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:123
+#, no-wrap
+msgid ""
+"quarkus.redis.my-redis-1.hosts=redis://localhost/\n"
+"quarkus.redis.my-redis-2.hosts=redis://my-other-redis:6379\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:126
+#, fuzzy
+msgid "To access the APIs, you need to use the `@RedisClientName` qualifier:"
+msgstr "要访问API，你需要使用 `@RedisClientName` 修饰语。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:135
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public class RedisExample {\n"
+"    @Inject @RedisClientName(\"my-redis-1\") ReactiveRedisDataSource reactiveDataSource;\n"
+"    @Inject @RedisClientName(\"my-redis-2\") RedisDataSource redisDataSource;\n"
+"    // ...\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:138
+#, fuzzy
+msgid "When using `@RedisClientName`, you can omit the `@Inject` annotation."
+msgstr "当使用 `@RedisClientName` ，你可以省略 `@Inject` 的注释。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:139
+#, fuzzy, no-wrap
+msgid "Connecting to Redis"
+msgstr "连接到Redis"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:142
+#, fuzzy
+msgid "The Redis extension can operate in 4 distinct modes:"
+msgstr "Redis扩展可以在4种不同的模式下运行。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:144
+#, fuzzy
+msgid "Simple client (probably what most users need)."
+msgstr "简单的客户端（可能是大多数用户需要的）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:145
+#, fuzzy
+msgid "Sentinel (when working with Redis in High Availability mode)."
+msgstr "Sentinel（当在高可用性模式下与Redis一起工作时）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:146
+#, fuzzy
+msgid "Cluster (when working with Redis in Clustered mode)."
+msgstr "群集（当在群集模式下与Redis一起工作时）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:147
+#, fuzzy
+msgid "Replication (single shard, one node write, multiple read)."
+msgstr "复制（单分片，一个节点写，多个读）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:149
+#, fuzzy
+msgid "The connection url is configured with the `quarkus.redis.hosts` (or `quarkus.redis.<name>.hosts`) as follows:"
+msgstr "连接网址是用 `quarkus.redis.hosts` （或 `quarkus.redis.<name>.hosts` ）配置的，如下所示。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:153
+#, no-wrap
+msgid "quarkus.redis.hosts=redis://[:password@]host[:port][/db-number]\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:155
+#, fuzzy, no-wrap
+msgid "Using Unix Socket"
+msgstr "使用Unix插座"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:158
+#, fuzzy
+msgid "When using unix-socket, you need:"
+msgstr "当使用unix-socket时，你需要。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:162
+#, no-wrap
+msgid "quarkus.redis.hosts=unix://[:password@]/domain/docker.sock[?select=db-number]\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:164
+#, fuzzy, no-wrap
+msgid "Sentinel Mode"
+msgstr "哨兵模式"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:167
+#, fuzzy
+msgid "When using Sentinel, you need to pass multiple _host urls_ and configure the client type to `sentinel`:"
+msgstr "当使用Sentinel时，你需要传递多个 _主机urls_ 并将客户端类型配置为 `sentinel` 。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:172
+#, no-wrap
+msgid ""
+"quarkus.redis.hosts=redis://localhost:5000,redis://localhost:5001,redis://localhost:5002\n"
+"quarkus.redis.client-type=sentinel\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:176
+#, no-wrap
+msgid ""
+"# Optional\n"
+"quarkus.redis.master-name=my-sentinel # Default is my-master\n"
+"quarkus.redis.role=master # master is the default\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:178
+#, fuzzy, no-wrap
+msgid "Cluster Mode"
+msgstr "集群模式"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:181
+#, fuzzy
+msgid "When using Redis in cluster mode, you need to pass multiple _host urls_, configure the client type to `cluster` and configure the `replicas` mode:"
+msgstr "当在集群模式下使用Redis时，你需要传递多个 _主机Url_ ，将客户端类型配置为 `cluster` ，并配置 `replicas` 模式。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:187
+#, no-wrap
+msgid ""
+"quarkus.redis.hosts=redis://localhost:7000,redis://localhost:7001,redis://localhost:7002\n"
+"quarkus.redis.client-type=cluster\n"
+"quarkus.redis.replicas=share\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:189
+#, fuzzy, no-wrap
+msgid "Replication Mode"
+msgstr "复制模式"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:192
+#, fuzzy
+msgid "When using the replication mode, you need to pass a single host url and configure the type to be `replication`:"
+msgstr "当使用复制模式时，你需要传递一个单一的主机网址，并将类型配置为 `replication` 。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:197
+#, no-wrap
+msgid ""
+"quarkus.redis.hosts=redis://localhost:7000\n"
+"quarkus.redis.client-type=replication\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:199
+#, fuzzy, no-wrap
+msgid "Connecting to Redis Cloud"
+msgstr "连接到Redis云"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:202
+#, fuzzy
+msgid "To connect to redis cloud, you need the following properties:"
+msgstr "要连接到redis云，你需要以下属性。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:207
+#, no-wrap
+msgid ""
+"quarkus.redis.hosts=<the redis cloud url such as redis://redis-12436.c14.us-east-1-3.ec2.cloud.redislabs.com:12436>\n"
+"quarkus.redis.password=<the password>\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:209
+#, fuzzy, no-wrap
+msgid "Authentication"
+msgstr "认证"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:213
+#, fuzzy
+msgid "The Redis password can be set in the `redis://` URL or with the `quarkus.redis.password` property.  We recommend the latter, and if possible, using secrets or an environment variable to configure the password."
+msgstr "Redis密码可以在 `redis://` URL中设置，也可以用 `quarkus.redis.password` 属性设置。我们推荐后者，如果可能的话，使用secrets或环境变量来配置密码。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:215
+#, fuzzy
+msgid "The associated environment variable is `QUARKUS_REDIS_PASSWORD`, or `QUARKUS_REDIS_<NAME>_PASSWORD` for named clients."
+msgstr "相关的环境变量是 `QUARKUS_REDIS_PASSWORD` ，或者 `QUARKUS_REDIS_<NAME>_PASSWORD` ，用于命名的客户端。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:216
+#, fuzzy, no-wrap
+msgid "Using the high-level clients (data sources)"
+msgstr "使用高层客户（数据源）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:221
+#, fuzzy
+msgid "Quarkus exposes a high-level API on top of Redis.  This API is type-safe and structured around the notion of _group_, inherited from the https://redis.io/commands/command-docs/[Redis command organization].  This API lets you execute Redis commands more conveniently and safely."
+msgstr "Quarkus在Redis之上暴露了一个高级API。这个API是类型安全的，围绕着从 link:https://redis.io/commands/command-docs/[Redis命令组织] 中继承下来的 _组_ 的概念进行结构化。这个API让你更方便、更安全地执行Redis命令。"
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:222
+#, fuzzy, no-wrap
+msgid "Injecting data sources"
+msgstr "注入数据源"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:225
+#, fuzzy
+msgid "For each configured Redis client, two Redis data sources are exposed:"
+msgstr "对于每个配置的Redis客户端，有两个Redis数据源被暴露。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:228
+#, fuzzy
+msgid "`io.quarkus.redis.datasource.RedisDataSource` - an imperative (blocking) Redis data source.  Each operation blocks until a response is received or a timeout is reached"
+msgstr " `io.quarkus.redis.datasource.RedisDataSource` - 一个强制性的（阻塞的）Redis数据源。每个操作都会阻塞，直到收到响应或达到超时。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:229
+#, fuzzy
+msgid "`io.quarkus.redis.datasource.ReactiveRedisDataSource` - a reactive Redis data source returning `Uni<X>` or `Multi<X>`."
+msgstr " `io.quarkus.redis.datasource.ReactiveRedisDataSource` - 一个反应式Redis数据源返回 或 。 `Uni<X>` `Multi<X>` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:231
+#, fuzzy
+msgid "If you configured the _default_ Redis client, you could inject the data sources using:"
+msgstr "如果你配置了 _默认的_ Redis客户端，你可以使用注入数据源。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:236
+#, no-wrap
+msgid ""
+"@Inject RedisDataSource defaultRedisDataSource;\n"
+"@Inject ReactiveRedisDataSource defaultReactiveRedisDataSource;\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:239
+#, fuzzy
+msgid "If you configured a _named_ Redis client, you need to use the `io.quarkus.redis.RedisClientName` qualifier to select the right client:"
+msgstr "如果你配置了一个 _命名的_ Redis客户端，你需要使用 `io.quarkus.redis.RedisClientName` 修饰语来选择正确的客户端。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:244
+#, no-wrap
+msgid ""
+"@RedisClientName(\"my-redis\") RedisDataSource myRedisDataSource;\n"
+"@RedisClientName(\"my-redis\") ReactiveRedisDataSource myReactiveRedisDataSource;\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:247
+#, fuzzy
+msgid "When using the _blocking_ variant, you can configure the default timeout with:"
+msgstr "当使用 _阻断_ 变体时，你可以用以下方法配置默认超时。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:252
+#, no-wrap
+msgid ""
+"quarkus.redis.timeout=5s\n"
+"quarkus.redis.my-redis.timeout=5s\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:255
+#, fuzzy
+msgid "The default timeout is configured to 10s."
+msgstr "默认超时被配置为10秒。"
+
+#. type: Block title
+#: upstream/_guides/redis-reference.adoc:257
+#, fuzzy, no-wrap
+msgid "All about delegation"
+msgstr "关于代表团的一切"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:261
+#, fuzzy
+msgid "The blocking data source (`io.quarkus.redis.datasource.RedisDataSource`) is implemented on top of the reactive one (`io.quarkus.redis.datasource.ReactiveRedisDataSource`).  The `ReactiveRedisDataSource` is implemented on top of the `io.vertx.mutiny.redis.Redis` API."
+msgstr "阻断数据源( `io.quarkus.redis.datasource.RedisDataSource` )是在反应式数据源( `io.quarkus.redis.datasource.ReactiveRedisDataSource` )之上实现的。 `ReactiveRedisDataSource` 是在 `io.vertx.mutiny.redis.Redis` API 的基础上实现的。"
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:263
+#, fuzzy, no-wrap
+msgid "Data Source groups"
+msgstr "数据源组"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:266
+#, fuzzy
+msgid "As mentioned above, the API is divided into groups:"
+msgstr "如上所述，API被分为几组。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:268
+#: upstream/_guides/redis-reference.adoc:269
+#, fuzzy
+msgid "bitmap - `.bitmap()`"
+msgstr "位图 - `.bitmap()` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:270
+#, fuzzy
+msgid "key (generic) - `.key()`"
+msgstr "键（通用）- `.key()` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:271
+#, fuzzy
+msgid "geo - `.geo(memberType)`"
+msgstr "地缘 - `.geo(memberType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:272
+#, fuzzy
+msgid "hash - `.hash(`valueType)`"
+msgstr "哈希 - `.hash(`valueType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:273
+#, fuzzy
+msgid "hyperloglog - `.hyperloglog(memberType)`"
+msgstr "超级日志 - `.hyperloglog(memberType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:274
+#, fuzzy
+msgid "list - `.list(memberType)`"
+msgstr "列表 - `.list(memberType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:275
+#, fuzzy
+msgid "pubsub - `pubsub()`"
+msgstr "pubsub - `pubsub()` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:276
+#, fuzzy
+msgid "set - `.set(memberType)`"
+msgstr "设置- `.set(memberType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:277
+#, fuzzy
+msgid "sorted-set - `.sortedSet(memberType)`"
+msgstr "排序集- `.sortedSet(memberType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:278
+#, fuzzy
+msgid "stream (not available yet)"
+msgstr "流动(暂不提供)"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:279
+#, fuzzy
+msgid "string - `.string(valueType)`"
+msgstr "字符串 - `.string(valueType)` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:280
+#, fuzzy
+msgid "transactions - `withTransaction`"
+msgstr "交易 - `withTransaction` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:283
+#, fuzzy
+msgid "Each of these methods returns an object that lets you execute the commands related to the group.  The following snippet demonstrates how to use the _hash_ group:"
+msgstr "这些方法中的每一个都返回一个对象，让你执行与该组相关的命令。下面的片段演示了如何使用 _哈希_ 组。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:288
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public class MyRedisService {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:290
+#, no-wrap
+msgid "    private static final String MY_KEY = \"my-key\";\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:292
+#, no-wrap
+msgid "    private final HashCommands<String, String, Person> commands;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:296
+#, no-wrap
+msgid ""
+"    public MyRedisService(RedisDataSource ds) { // <1>\n"
+"        commands = ds.hash(Person.class); // <2>\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:300
+#, no-wrap
+msgid ""
+"    public void set(String field, Person value) {\n"
+"        commands.hset(MY_KEY, field, value);  // <3>\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:305
+#, no-wrap
+msgid ""
+"    public Person get(String field) {\n"
+"        commands.hget(MY_KEY, field);  // <4>\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:307
+#, fuzzy
+msgid "Inject the `RedisDataSource` in the constructor"
+msgstr "在构造函数中注入 `RedisDataSource` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:309
+#, fuzzy
+msgid "Creates the `HashCommands` object.  This object has three type parameters: the type of the key, the type of the field, and the type of the member"
+msgstr "创建 `HashCommands` 对象。这个对象有三个类型参数：键的类型，字段的类型，以及成员的类型。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:310
+#, fuzzy
+msgid "Use the created `commands` to associate the field `field` with the value `value`"
+msgstr "使用创建的 `commands` ，将字段 `field` 与值联系起来。 `value` "
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:311
+#, fuzzy
+msgid "Use the created `commands` to retrieve the field `field` value."
+msgstr "使用创建的 `commands` ，检索字段 `field` 值。"
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:312
+#, fuzzy, no-wrap
+msgid "Serialization and Deserialization"
+msgstr "序列化和反序列化"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:317
+#, fuzzy
+msgid "The data source APIs handle the serialization and deserialization automatically.  When a non-standard type is used, the object is serialized into JSON and deserialized from JSON.  In this case, `quarkus-jackson` is used."
+msgstr "数据源API会自动处理序列化和反序列化。当使用非标准类型时，该对象被序列化为JSON，并从JSON中反序列化。在这种情况下，使用 `quarkus-jackson` 。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:319
+#, fuzzy
+msgid "To store binary data, use `byte[]`."
+msgstr "要存储二进制数据，使用 `byte[]` 。"
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:320
+#, fuzzy, no-wrap
+msgid "The `string` group"
+msgstr " `string` 组"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:324
+#, fuzzy
+msgid "The `string` group is used to manipulate https://redis.io/docs/manual/data-types/#strings[Redis Strings].  Thus, this group is not limited to Java Strings but can be used for integers (like a counter) or binary content (like images)."
+msgstr " `string` 组是用来操作 link:https://redis.io/docs/manual/data-types/#strings[Redis 字符串的] 。因此，这个组不限于Java字符串，而是可以用于整数（如计数器）或二进制内容（如图像）。"
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:325
+#, fuzzy, no-wrap
+msgid "Caching values"
+msgstr "缓存值"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:329
+#, fuzzy
+msgid "You can use Redis as a cache using the `setex` command, which stores a given value to a given key for a given duration.  The following snippet shows how such a command can be used to store `BusinessObject` for 1 second."
+msgstr "你可以使用Redis作为缓存，使用 `setex` 命令，将一个给定的值存储到一个给定的键上，并持续一段时间。下面的片段显示了如何使用这样的命令来存储 `BusinessObject` ，持续1秒。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:334
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public static class MyRedisCache {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:336
+#, no-wrap
+msgid "    private final StringCommands<String, BusinessObject> commands;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:340
+#, no-wrap
+msgid ""
+"    public MyRedisCache(RedisDataSource ds) {\n"
+"        commands = ds.string(BusinessObject.class);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:344
+#: upstream/_guides/redis-reference.adoc:504
+#, no-wrap
+msgid ""
+"    public BusinessObject get(String key) {\n"
+"        return commands.get(key);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:349
+#, no-wrap
+msgid ""
+"    public void set(String key, BusinessObject bo) {\n"
+"        commands.setex(key, 1, bo); // Expires after 1 second\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:352
+#, fuzzy
+msgid "You can use the `setnx` method only to set the value if no value has been stored for the given key."
+msgstr "如果没有为给定的键存储值，你只能使用 `setnx` 方法来设置值。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:354
+#, fuzzy
+msgid "The `key` group provides more fine-grain control on expiration and ttl of each key."
+msgstr " `key` 组对每个密钥的过期和tl提供了更细粒度的控制。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:358
+#, fuzzy
+msgid "The `set` method can also receive a `SetArgs` argument that modify the behavior:"
+msgstr " `set` 方法也可以接收一个 `SetArgs` 参数，修改行为。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:360
+#, fuzzy
+msgid "`ex(seconds)` - Set the specified expire time, in seconds."
+msgstr " `ex(seconds)` - 设置指定的过期时间，单位为秒。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:361
+#, fuzzy
+msgid "`px(milliseconds)` - Set the specified expire time, in milliseconds."
+msgstr " `px(milliseconds)` - 设置指定的过期时间，以毫秒为单位。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:362
+#, fuzzy
+msgid "`exat(timestamp-seconds)` - Set the specified Unix time at which the key will expire, in seconds."
+msgstr " `exat(timestamp-seconds)` - 设置指定的Unix时间，在该时间内密钥将过期，单位为秒。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:363
+#, fuzzy
+msgid "`pxat(timestamp-milliseconds)` - Set the specified Unix time at which the key will expire, in milliseconds."
+msgstr " `pxat(timestamp-milliseconds)` - 设置指定的Unix时间，在该时间段内密钥将过期，单位为毫秒。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:364
+#, fuzzy
+msgid "`nx()` - Only set the key if it does not already exist."
+msgstr " `nx()` - 只有在钥匙不存在的情况下，才会设置它。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:365
+#, fuzzy
+msgid "`xx()` - Only set the key if it already exists."
+msgstr " `xx()` - 只有在钥匙已经存在的情况下才设置。"
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:366
+#, fuzzy
+msgid "`keepttl()` - Retain the time to live associated with the key."
+msgstr " `keepttl()` - 保留与钥匙相关的生存时间。"
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:368
+#, fuzzy, no-wrap
+msgid "Storing binary data"
+msgstr "存储二进制数据"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:372
+#, fuzzy
+msgid "Redis _strings_ can be used to store binary data, such as images.  In this case, we will use `byte[]` as value type:"
+msgstr "Redis _字符串_ 可用于存储二进制数据，如图像。在这种情况下，我们将使用 `byte[]` 作为值类型。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:377
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public static class MyBinaryRepository {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:379
+#, no-wrap
+msgid "    private final StringCommands<String, byte[]> commands;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:383
+#, no-wrap
+msgid ""
+"    public MyBinaryRepository(RedisDataSource ds) {\n"
+"        commands = ds.string(byte[].class);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:391
+#, no-wrap
+msgid ""
+"    public byte[] get(String key) {\n"
+"        byte[] bytes = commands.get(key);\n"
+"        if (bytes == null) {\n"
+"            throw new NoSuchElementException(\"`\" + key + \"` not found\");\n"
+"        }\n"
+"        return bytes;\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:395
+#, no-wrap
+msgid ""
+"    public void add(String key, byte[] bytes) {\n"
+"        commands.set(key, bytes);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:400
+#, no-wrap
+msgid ""
+"    public void addIfAbsent(String key, byte[] bytes) {\n"
+"        commands.setnx(key, bytes);\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:402
+#, fuzzy, no-wrap
+msgid "Storing a counter"
+msgstr "储存一个计数器"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:405
+#, fuzzy
+msgid "You can store counters in Redis as demonstrated below:"
+msgstr "你可以在Redis中存储计数器，如下图所示。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:410
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public static class MyRedisCounter {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:412
+#, no-wrap
+msgid "    private final StringCommands<String, Long> commands;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:416
+#, no-wrap
+msgid ""
+"    public MyRedisCounter(RedisDataSource ds) {\n"
+"        commands = ds.string(Long.class); // <1>\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:424
+#, no-wrap
+msgid ""
+"    public long get(String key) {\n"
+"        Long l = commands.get(key);  // <2>\n"
+"        if (l == null) {\n"
+"            return 0L;\n"
+"        }\n"
+"        return l;\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:428
+#, no-wrap
+msgid ""
+"    public void incr(String key) {\n"
+"        commands.incr(key);  // <3>\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:430
+#, no-wrap
+msgid "}\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:433
+#, fuzzy
+msgid "Retrieve the commands.  This time we will manipulate `Long` values"
+msgstr "检索命令。这一次我们将操作 `Long` 值"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:435
+#, fuzzy
+msgid "Retrieve the counter associated with the given `key`.  Return `0L` when no counter is stored."
+msgstr "检索与给定 `key` 相关的计数器。当没有存储计数器时，返回 `0L` 。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:437
+#, fuzzy
+msgid "Increment the value.  If there are no counter stored for the key, the `incr` command considers 0 as value (so `incr` sets the value to 1)."
+msgstr "递增该值。如果没有为该键存储计数器， `incr` 命令将0视为值（因此 `incr` 将值设为1）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:439
+#, fuzzy
+msgid "There are other methods that can be useful to manipulate counters, such as:"
+msgstr "还有其他一些方法可以用来操作计数器，例如。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:441
+#, fuzzy
+msgid "`incrby` - allows setting the increment value (positive or negative)"
+msgstr " `incrby` - 允许设置增量值（正或负）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:442
+#, fuzzy
+msgid "`incrbyfloat` - allows setting the increment value as a float/ double (the stored value will be a double)"
+msgstr " `incrbyfloat` - 允许将增量值设置为浮点数/双数（存储的值将是双数）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:443
+#, fuzzy
+msgid "`set` - to set an initial value if needed"
+msgstr " `set` - 来设置一个初始值，如果需要的话"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:444
+#, fuzzy
+msgid "`decr` and `decrby` - allows decrementing the stored value"
+msgstr " `decr` 和 - 允许递减存储的值 `decrby` "
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:445
+#, fuzzy, no-wrap
+msgid "Using pub/sub"
+msgstr "使用pub/sub"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:449
+#, fuzzy
+msgid "Redis allows sending _messages_ to channels and listening for these messages.  These features are available from the the `pubsub` group."
+msgstr "Redis允许向通道发送 _消息_ 并监听这些消息。这些功能可以从 `pubsub` 组中获得。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:451
+#, fuzzy
+msgid "The following snippets shows how a _cache_ can emit a `Notification` after every `set`, and how a subscriber can receive the notification."
+msgstr " `Notification` 下面的片段显示了一个 _缓存_ 如何在每次 `set` ，以及订阅者如何接收通知。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:457
+#, no-wrap
+msgid ""
+"public static final class Notification {\n"
+"    public String key;\n"
+"    public BusinessObject bo;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:459
+#, no-wrap
+msgid "    public Notification() {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:461
+#, no-wrap
+msgid "    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:467
+#, no-wrap
+msgid ""
+"    public Notification(String key, BusinessObject bo) {\n"
+"        this.key = key;\n"
+"        this.bo = bo;\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:473
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"@Startup // We want to create the bean instance on startup to subscribe to the channel.\n"
+"public static class MySubscriber implements Consumer<Notification> {\n"
+"    private final PubSubCommands<Notification> pub;\n"
+"    private final PubSubCommands.RedisSubscriber subscriber;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:478
+#, no-wrap
+msgid ""
+"    public MySubscriber(RedisDataSource ds) {\n"
+"        pub = ds.pubsub(Notification.class);\n"
+"        subscriber = pub.subscribe(\"notifications\", this);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:483
+#, no-wrap
+msgid ""
+"    @Override\n"
+"    public void accept(Notification notification) {\n"
+"        // Receive the notification\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:489
+#, no-wrap
+msgid ""
+"    @PreDestroy\n"
+"    public void terminate() {\n"
+"        subscriber.unsubscribe(); // Unsubscribe from all subscribed channels\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:492
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public static class MyCache {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:495
+#, no-wrap
+msgid ""
+"    private final StringCommands<String, BusinessObject> commands;\n"
+"    private final PubSubCommands<Notification> pub;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:500
+#, no-wrap
+msgid ""
+"    public MyCache(RedisDataSource ds) {\n"
+"        commands = ds.string(BusinessObject.class);\n"
+"        pub = ds.pubsub(Notification.class);\n"
+"    }\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:510
+#, no-wrap
+msgid ""
+"    public void set(String key, BusinessObject bo) {\n"
+"        commands.set(key, bo);\n"
+"        pub.publish(\"notifications\", new Notification(key, bo));\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:512
+#, fuzzy, no-wrap
+msgid "Using transactions"
+msgstr "使用交易"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:516
+#, fuzzy
+msgid "Redis transactions are slightly different from relational database transactions.  Redis transactions are a batch of commands executed altogether."
+msgstr "Redis事务与关系型数据库事务略有不同。Redis事务是一批完全执行的命令。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:518
+#, fuzzy
+msgid "A Redis transaction can _watch_ a set of keys, which would _discard_ the transaction is one of these keys are updated during the transaction execution."
+msgstr "一个Redis事务可以 _监视_ 一组键，如果这些键中的一个在事务执行过程中被更新，它将 _放弃_ 该事务。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:523
+#, fuzzy
+msgid "Commands enqueued in a transaction are not executed before the whole transaction is executed.  It means that you cannot retrieve a result during the transaction.  Results are accumulated in a `TransactionResult` object you will access after the completion of the transaction.  This object contains whether the transaction succeeded or was discarded, and in the former case the result of each command (indexed by the command order)."
+msgstr "在一个事务中排队的命令在整个事务执行之前不会被执行。这意味着在交易过程中你不能检索到一个结果。结果被积累在一个 `TransactionResult` 对象中，你将在事务完成后访问。这个对象包含了交易是否成功或被放弃，以及在前者的情况下，每个命令的结果（以命令顺序为索引）。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:527
+#, fuzzy
+msgid "To start a transaction, you use the `withTransaction` method.  This method receives a `Consumer<TransactionalRedisDataSource>`, which follows the same API as the regular `RedisDataSource` except that the commands return `void` (`Uni<Void>` for the reactive variant).  When that consumer returns, the transaction is _executed_."
+msgstr "要启动一个事务，你要使用 `withTransaction` 方法。这个方法接收一个 `Consumer<TransactionalRedisDataSource>` ，它遵循与常规 `RedisDataSource` 相同的API，只是命令返回 `void` （反应式变体为 `Uni<Void>` ）。当该消费者返回时，事务被 _执行_ 。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:529
+#, fuzzy
+msgid "The following snippet shows how to create a transaction executing two related _writes_:"
+msgstr "下面的片段显示了如何创建一个事务，执行两个相关的 _写操作_ 。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:533
+#, no-wrap
+msgid "@Inject RedisDataSource ds;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:535
+#: upstream/_guides/redis-reference.adoc:553
+#: upstream/_guides/redis-reference.adoc:634
+#, no-wrap
+msgid "// ...\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:541
+#, no-wrap
+msgid ""
+"TransactionResult result = ds.withTransaction(tx -> {\n"
+"        TransactionalHashCommands<String, String, String> hash = tx.hash(String.class);\n"
+"        hash.hset(KEY, \"field-1\", \"hello\");\n"
+"        hash.hset(KEY, \"field-2\", \"hello\");\n"
+"    });\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:545
+#, fuzzy
+msgid "The received `tx` object can also be used to _discard_ the transaction, using: `tx.discard();`.  The returned `TransactionResult` lets you retrieve the result of each command."
+msgstr "收到的 `tx` 对象也可以用来 _放弃_ 交易，使用： `tx.discard();` 。返回的 `TransactionResult` ，让你检索每个命令的结果。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:547
+#, fuzzy
+msgid "When using the reactive variant of the data source, the passed callback is a `Function<ReactiveTransactionalRedisDataSource, Uni<Void>>`:"
+msgstr "当使用数据源的反应式变体时，传递的回调是一个 `Function<ReactiveTransactionalRedisDataSource, Uni<Void>>` 。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:551
+#: upstream/_guides/redis-reference.adoc:632
+#, no-wrap
+msgid "@Inject ReactiveRedisDataSource ds;\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:559
+#, no-wrap
+msgid ""
+"Uni<TransactionResult> result = ds.withTransaction(tx -> {\n"
+"        ReactiveTransactionalHashCommands<String, String, String> hash = tx.hash(String.class);\n"
+"        return hash.hset(KEY, \"field-1\", \"hello\")\n"
+"            .chain(() -> hash.hset(KEY, \"field-2\", \"hello\"));\n"
+"});\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:564
+#, fuzzy
+msgid "Transaction execution can be conditioned by _keys_.  When a passed key gets modified during the execution of a transaction, the transaction is discarded.  The keys are passed as `String` as a second parameter to the `withTransaction` method:"
+msgstr "事务的执行可以 _由键_ 来决定。当一个传递的键在事务执行过程中被修改时，该事务就会被丢弃。键被作为 `String` ，作为第二个参数传给 `withTransaction` 方法。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:572
+#, no-wrap
+msgid ""
+"TransactionResult result = ds.withTransaction(tx -> {\n"
+"    TransactionalHashCommands<String, String, String> hash = tx.hash(String.class);\n"
+"    hash.hset(KEY, \"field-1\", \"hello\");\n"
+"    hash.hset(KEY, \"field-2\", \"hello\");\n"
+"}, KEY);\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:575
+#, fuzzy
+msgid "You cannot use the pub/sub feature from within a transaction."
+msgstr "你不能在一个交易中使用pub/sub功能。"
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:576
+#, fuzzy, no-wrap
+msgid "Using optimistic locking"
+msgstr "使用乐观的锁定"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:580
+#, fuzzy
+msgid "To use optimistic locking, you need to use a variant of the `withTransaction` method, allowing the execution of code before the transaction starts.  In other words, it will be executed as follows:"
+msgstr "为了使用乐观锁，你需要使用 `withTransaction` 方法的一个变体，允许在事务开始之前执行代码。换句话说，它将被执行，如下所示。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:584
+#, no-wrap
+msgid "WATCH key\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:588
+#, no-wrap
+msgid ""
+"// Pre-transaction block\n"
+"// ....\n"
+"// Produce a result\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:592
+#, no-wrap
+msgid ""
+"MULTI\n"
+"  // In transaction code, receive the result produced by the pre-transaction block.\n"
+"EXEC\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:595
+#, fuzzy
+msgid "For example, if you need to update a value in a hash only if the field exists, you will use the following API:"
+msgstr "例如，如果你需要更新一个哈希值，只有当该字段存在时，你将使用以下API。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:611
+#, no-wrap
+msgid ""
+"OptimisticLockingTransactionResult<Boolean> result = blocking.withTransaction(ds -> {\n"
+"    // The pre-transaction block:\n"
+"    HashCommands<String, String, String> hashCommands = ds.hash(String.class);\n"
+"    return hashCommands.hexists(key, \"field\"); // Produce a result (boolean in this case)\n"
+"},\n"
+" (exists, tx) -> { // The transactional block, receives the result and the transactional data source\n"
+"        if (exists) {\n"
+"            tx.hash(String.class).hset(key, \"field\", \"new value\");\n"
+"        } else {\n"
+"            tx.discard();\n"
+"        }\n"
+" },\n"
+"  key); // The watched key\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:617
+#, fuzzy
+msgid "If one of the watched keys is touched before or during the execution of the pre-transaction or transactional blocks, the transaction is aborted.  The pre-transactional block produces a result that the transactional block can use.  This construct is necessary because, within a transaction, the commands do not produce a result.  Results can only be retrieved after the execution of the transaction."
+msgstr "如果在执行预交易区块或交易区块之前或期间，有一个被监视的键被触动，交易就会被中止。预交易块产生一个结果，交易块可以使用。这种结构是必要的，因为在一个事务中，命令不产生结果。结果只能在交易执行后被检索到。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:622
+#, fuzzy
+msgid "The pre-transaction and transactional blocks are invoked on the same Redis connection.  Consequently, the pre-transaction block must use the passed data source to execute commands.  Thus, the commands are emitted from that connection.  These commands must not modify the watched keys."
+msgstr "预交易块和交易块是在同一个Redis连接上调用的。因此，预交易块必须使用传递的数据源来执行命令。因此，这些命令是从该连接中发出的。这些命令不能修改被监视的键。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:624
+#, fuzzy
+msgid "The transaction is aborted if the pre-transaction block throws an exception (or produces a failure when using the reactive API)."
+msgstr "如果预交易块抛出一个异常（或者在使用反应式API时产生一个失败），交易将被中止。"
+
+#. type: Title ====
+#: upstream/_guides/redis-reference.adoc:625
+#, fuzzy, no-wrap
+msgid "Executing custom commands"
+msgstr "执行自定义命令"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:628
+#, fuzzy
+msgid "To execute a custom command, or a command not supported by the API, use the following approach:"
+msgstr "要执行一个自定义的命令，或一个API不支持的命令，请使用以下方法。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:636
+#, no-wrap
+msgid "Response response = ds.execute(\"my-command\", param1, param2, param3);\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:642
+#, fuzzy
+msgid "The `execute` method sends the command to Redis and retrieves the `Response`.  The command name is passed as first parameters.  You can add an arbitrary number of **String** parameters to your command.  The result is wrapped into a `Response` object."
+msgstr " `execute` 方法将命令发送到Redis并检索 `Response` 。命令名称作为第一个参数传递。你可以为你的命令添加任意数量的 *String* 参数。结果被包装成一个 `Response` 对象。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:644
+#, fuzzy
+msgid "The reactive variant returns a `Uni<Response>`."
+msgstr "反应式变体返回一个 `Uni<Response>` 。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:646
+#, fuzzy
+msgid "You can also execute custom command in a transaction."
+msgstr "你也可以在一个事务中执行自定义命令。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:647
+#, fuzzy, no-wrap
+msgid "Vert.x Redis Client"
+msgstr "Vert.x Redis客户端"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:651
+#, fuzzy
+msgid "In addition to the high-level API, you can use the Vertx Redis clients directly in your code.  The documentation of the Vert.x Redis Client is available on the https://vertx.io/docs/vertx-redis-client/java/[Vert.x Web Site]."
+msgstr "除了高层的API，你还可以在你的代码中直接使用Vertx Redis客户端。Vert.x Redis客户端的文档可以在 link:https://vertx.io/docs/vertx-redis-client/java/[Vert.x网站] 上找到。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:652
+#, fuzzy, no-wrap
+msgid "Redis Health Check"
+msgstr "Redis健康检查"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:655
+#, fuzzy
+msgid "If you are using the `quarkus-smallrye-health` extension, `quarkus-redis` will automatically add a readiness health check to validate the connection to the Redis server."
+msgstr "如果你使用 `quarkus-smallrye-health` 扩展， `quarkus-redis` 将自动添加一个准备就绪健康检查，以验证与Redis服务器的连接。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:657
+msgid "So when you access the `/q/health/ready` endpoint of your application you will have information about the connection validation status."
+msgstr "因此，当你访问应用程序的 `/q/health/ready` 端点时，可获得有关于连接验证状态的信息。"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:659
+msgid "This behavior can be disabled by setting the `quarkus.redis.health.enabled` property to `false` in your `application.properties`."
+msgstr "可以通过在 `application.properties` 中设置 `quarkus.redis.health.enabled` 属性为 `false` 来禁用这个连接健康检查。"
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:660
+#, no-wrap
+msgid "Providing Redis Hosts Programmatically"
+msgstr "以编程方式设定Redis主机"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:664
+msgid "The `RedisHostsProvider` programmatically provides redis hosts.  This allows for configuration of properties like redis connection password coming from other sources."
+msgstr ""
+
+#. type: delimited block =
+#: upstream/_guides/redis-reference.adoc:668
+msgid "This is useful as it removes the need to store sensitive data in application.properties."
+msgstr "这样可以避免在application.properties中存储敏感数据，很实用。"
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:682
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"@Identifier(\"hosts-provider\") // the name of the host provider\n"
+"public class ExampleRedisHostProvider implements RedisHostsProvider {\n"
+"    @Override\n"
+"    public Set<URI> getHosts() {\n"
+"        // do stuff to get the host\n"
+"        String host = \"redis://localhost:6379/3\";\n"
+"        return Collections.singleton(URI.create(host));\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:685
+msgid "The host provider can be used to configure the redis client like shown below"
+msgstr "`RedisHostsProvider` 可用于配置Redis客户端，如下图所示："
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:689
+#, no-wrap
+msgid "quarkus.redis.hosts-provider-name=hosts-provider\n"
+msgstr ""
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:691
+#, fuzzy, no-wrap
+msgid "Customizing the Redis options programmatically"
+msgstr "以编程方式设定Redis主机"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:695
+msgid "You can expose a bean implementing the `io.quarkus.redis.client.RedisOptionsCustomizer` interface to customize the Redis client options.  The bean is called for each configured Redis client:"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:700
+#, no-wrap
+msgid ""
+"@ApplicationScoped\n"
+"public static class MyExampleCustomizer implements RedisOptionsCustomizer {\n"
+msgstr ""
+
+#. type: delimited block -
+#: upstream/_guides/redis-reference.adoc:711
+#, no-wrap
+msgid ""
+"    @Override\n"
+"    public void customize(String clientName, RedisOptions options) {\n"
+"        if (clientName.equalsIgnoreCase(\"my-redis\")\n"
+"                || clientName.equalsIgnoreCase(RedisConfig.DEFAULT_CLIENT_NAME)) {\n"
+"            // modify the given options\n"
+"        } else {\n"
+"            throw new IllegalStateException(\"Unknown client name: \" + clientName);\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Title ===
+#: upstream/_guides/redis-reference.adoc:714
+#, no-wrap
+msgid "Dev Services"
+msgstr "开发服务"
+
+#. type: Plain text
+#: upstream/_guides/redis-reference.adoc:717
+msgid "See link:redis-dev-services.adoc[Redis Dev Service]."
+msgstr ""
+
+#. type: Title ==
+#: upstream/_guides/redis-reference.adoc:719
+#, no-wrap
+msgid "Configuration Reference"
+msgstr "配置参考"
+
+#~ msgid "How to use custom Redis Commands"
+#~ msgstr "如何使用自定义Redis命令"
+
+#~ msgid "As the list of commands which are supported out-of-box by both https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] and https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] depends on what is available in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`], then there might be case when you need a command which is not (yet) available via https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`]."
+#~ msgstr "https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 和 https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 开箱即支持的命令列表取决于 https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 所支持的命令，那么可能会出现你需要用的命令 https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] （还）不支持的情况。"
+
+#~ msgid "In such case (if you don't want to wait for the new command to be supported in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`]), you can implement it in either https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] or https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`].  In order to do so, you will need:"
+#~ msgstr "在这种情况下，如果你不想等到未来版本的 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 支持这些命令，可以在 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 或 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 中实现它们。实现自定义的Redis命令需要："
+
+#~ msgid "Generate a new `Command` based on the nodejs code available in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] repository:"
+#~ msgstr "使用 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 仓库中的Nodejs代码，生成一个新的 `Command`。"
+
+#~ msgid "If you don't have a Redis service running locally, you can run Redis in a Docker container:"
+#~ msgstr "如果你没有本地运行的Redis服务，可以在Docker容器中运行Redis："
+
+#~ msgid "Next, while being in https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] root folder execute:"
+#~ msgstr "然后，在 link:https://github.com/vert-x3/vertx-redis-client[`vertx-redis-client`] 的根目录下执行以下命令："
+
+#~ msgid "The above sequence of commands should update the https://github.com/vert-x3/vertx-redis-client/blob/master/src/main/java/io/vertx/redis/client/Command.java[`Command.java`] file, so it includes all the possible commands supported by a particular Redis version."
+#~ msgstr "以上的几行命令会更新 link:https://github.com/vert-x3/vertx-redis-client/blob/master/src/main/java/io/vertx/redis/client/Command.java[`Command.java`] 文件，使其包含指定版本的 Redis 的所有支持的命令。"
+
+#~ msgid "This definition is very important as we will have to use it in the service.  Once we have this `Command` we can start to update the redis-client extension by:"
+#~ msgstr "我们需要在服务中使用这个Redis命令，因此这个定义非常重要。有了这个 `Command` 定义后，我们就可以开始更新redis-client扩展。"
+
+#~ msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] interface, i.e.:"
+#~ msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/RedisClient.java[`RedisClient`] 接口，即："
+
+#~ msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/RedisClientImpl.java[`RedisClientImpl`], i.e.:"
+#~ msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/RedisClientImpl.java[`RedisClientImpl`] ，即："
+
+#~ msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] interface, i.e.:"
+#~ msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/reactive/ReactiveRedisClient.java[`ReactiveRedisClient`] 接口，即："
+
+#~ msgid "Updating the https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/ReactiveRedisClientImpl.java[`ReactiveRedisClientImpl`], i.e.:"
+#~ msgstr "更新 link:https://github.com/quarkusio/quarkus/blob/main/extensions/redis-client/runtime/src/main/java/io/quarkus/redis/client/runtime/ReactiveRedisClientImpl.java[`ReactiveRedisClientImpl`] ，即："
+
+#~ msgid "Please note that it's using the `MutinyRedis` class which does asynchronous calls to Redis."
+#~ msgstr "请注意，上述代码使用 `MutinyRedis` 类异步调用Redis命令"

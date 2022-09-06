@@ -2733,7 +2733,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:31133
 #, no-wrap
 msgid "`false`"
-msgstr ""
+msgstr "`false` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:36
@@ -2983,7 +2983,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:31106
 #, no-wrap
 msgid "`true`"
-msgstr ""
+msgstr "`true` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:67
@@ -15057,7 +15057,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:8100
 #, no-wrap
 msgid "`binary`"
-msgstr ""
+msgstr "`binary` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:8105
@@ -16380,7 +16380,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:20832
 #, no-wrap
 msgid "`localhost`"
-msgstr ""
+msgstr "`localhost` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:9028
@@ -18215,7 +18215,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:26380
 #, no-wrap
 msgid "`10`"
-msgstr ""
+msgstr "`10` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:10167
@@ -21076,7 +21076,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:22183
 #, no-wrap
 msgid "`100`"
-msgstr ""
+msgstr "`100` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:12266
@@ -21494,7 +21494,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:30092
 #, no-wrap
 msgid "`1000`"
-msgstr ""
+msgstr "`1000` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:12510
@@ -25183,7 +25183,7 @@ msgstr ""
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:24085
 #, no-wrap
 msgid "`3`"
-msgstr ""
+msgstr "`3` "
 
 #. type: Table
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:15250
@@ -47447,7 +47447,7 @@ msgstr "持续时间的格式使用标准的 `java.time.Duration` 格式您可�
 #. type: delimited block =
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:31172
 msgid "You can also provide duration values starting with a number.  In this case, if the value consists only of a number, the converter treats the value as seconds.  Otherwise, `PT` is implicitly prepended to the value to obtain a standard `java.time.Duration` format."
-msgstr "您还可以提供以数字开头的持续时间值。 在这种情况下，如果该值仅包含一个数字，则转换器将该值视为秒。 否则，`PT` 会隐式添加到值的前面，以获得标准的`java.time.Duration` 格式。"
+msgstr "您还可以提供以数字开头的持续时间值。 在这种情况下，如果该值仅包含一个数字，则转换器将该值视为秒。 否则，`PT` 会隐式添加到值的前面，以获得标准的 `java.time.Duration` 格式。"
 
 #. type: Block title
 #: upstream/_generated-config/2.2/config/quarkus-all-config.adoc:31177

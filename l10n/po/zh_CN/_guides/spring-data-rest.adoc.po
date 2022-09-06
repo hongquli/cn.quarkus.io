@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-06-29 15:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/spring-data-rest.adoc:27
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: Plain text
 #: upstream/_guides/spring-data-rest.adoc:29
@@ -395,7 +395,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/spring-data-rest.adoc:202
 #, fuzzy
-msgid "The `FruitsRepository` above extends Spring Data's `org.springframework.data.repository.CrudRepository` which means that all of the latter's methods are available to `FruitsRepository`."
+msgid "The `FruitsRepository` above extends Spring Data's `org.springframework.data.repository.CrudRepository` which means that all the latter's methods are available to `FruitsRepository`."
 msgstr "上面的 `FruitsRepository` 扩展了Spring Data的 `org.springframework.data.repository.CrudRepository` ，这意味着后者的所有方法对 `FruitsRepository` 都可用。"
 
 #. type: Plain text

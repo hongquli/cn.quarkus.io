@@ -1799,7 +1799,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/deploying-to-kubernetes.adoc:1108
 #, no-wrap
 msgid "false"
-msgstr ""
+msgstr "false"
 
 #. type: Table
 #: upstream/_versions/2.7/guides/deploying-to-kubernetes.adoc:707
@@ -2422,7 +2422,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/deploying-to-kubernetes.adoc:905
 #, no-wrap
 msgid "Gradle"
-msgstr ""
+msgstr "Gradle"
 
 #. type: delimited block -
 #: upstream/_versions/2.7/guides/deploying-to-kubernetes.adoc:909

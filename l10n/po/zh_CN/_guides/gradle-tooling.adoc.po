@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-07-19 18:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "JVM模式下的自定义测试配置文件"
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:65
 #, fuzzy
-msgid "By default, Quarkus tests in JVM mode are run using the `test` configuration profile. If you are not familiar with Quarkus configuration profiles, everything you need to know is explained in the xref:config.adoc#configuration-profiles[Configuration Profiles Documentation]."
+msgid "By default, Quarkus tests in JVM mode are run using the `test` configuration profile. If you are not familiar with Quarkus configuration profiles, everything you need to know is explained in the xref:config-reference.adoc#profiles[Configuration Profiles Documentation]."
 msgstr "默认情况下，Quarkus测试在JVM模式下使用 `test` 配置文件运行。如果你不熟悉Quarkus配置文件，你需要知道的一切都在 link:config.html#configuration-profiles[配置文件文档] 中解释。"
 
 #. type: Plain text
@@ -427,7 +427,7 @@ msgstr "如果你打算通过Docker运行该应用程序，那么你需要在 `d
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:273
 #, fuzzy
-msgid "The remote side does not need to include Maven or any other development tools. The normal `fast-jar` Dockerfile that is generated with a new Quarkus application is all you need. If you are using bare metal launch the Quarkus runner jar, do not attempt to run normal devmode."
+msgid "The remote side does not need to include Maven or any other development tools. The normal `fast-jar` Dockerfile that is generated with a new Quarkus application is all you need. If you are using bare metal launch the Quarkus runner jar, do not attempt to run normal dev mode."
 msgstr "远程端不需要包括Maven或任何其他开发工具。你只需要在新的Quarkus应用程序中生成正常的 `fast-jar` Docker文件即可。如果你使用裸机启动Quarkus runner jar，不要试图运行正常的devmode。"
 
 #. type: Plain text
@@ -565,19 +565,19 @@ msgstr "并享受一个高生产力的环境。"
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:334
 #, fuzzy, no-wrap
-msgid "**IntelliJ**\n"
+msgid "**IntelliJ IDEA**\n"
 msgstr " *兴发xf187在线娱乐* "
 
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:336
 #, fuzzy
-msgid "In IntelliJ:"
+msgid "In IntelliJ IDEA:"
 msgstr "在IntelliJ:"
 
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:338
 #, fuzzy
-msgid "From inside IntelliJ select `File -> New -> Project From Existing Sources...` or, if you are on the welcome dialog, select `Import project`."
+msgid "From inside IntelliJ IDEA select `File -> New -> Project From Existing Sources...` or, if you are on the welcome dialog, select `Import project`."
 msgstr "在IntelliJ内部选择 `File → New → Project From Existing Sources…​` ，或者，如果你在欢迎对话框中，选择 `Import project` 。"
 
 #. type: Plain text
@@ -785,7 +785,7 @@ msgstr "本机可执行文件将特定于你的操作系统。要创建一个将
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:449
 #, fuzzy
-msgid "The produced executable will be a 64 bit Linux executable, so depending on your operating system it may no longer be runnable.  However, it's not an issue as we are going to copy it to a Docker container.  Note that in this case the build itself runs in a Docker container too, so you don't need to have GraalVM installed locally."
+msgid "The produced executable will be a 64-bit Linux executable, so depending on your operating system it may no longer be runnable.  However, it's not an issue as we are going to copy it to a Docker container.  Note that in this case the build itself runs in a Docker container too, so you don't need to have GraalVM installed locally."
 msgstr "产生的可执行文件将是一个64位的Linux可执行文件，所以根据你的操作系统，它可能不再是可运行的。然而，这不是一个问题，因为我们要把它复制到Docker容器中。请注意，在这种情况下，构建本身也在Docker容器中运行，所以你不需要在本地安装GralVM。"
 
 #. type: delimited block =
@@ -897,7 +897,7 @@ msgstr " `fast-jar` 现在是quarkus软件包的默认类型。 命令的结果�
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:521
 #, fuzzy
-msgid "You can run the application using: `java -jar target/quarkus-app/quarkus-run.jar`."
+msgid "You can run the application using: `java -jar build/quarkus-app/quarkus-run.jar`."
 msgstr "你可以使用以下方式运行应用程序： `java -jar target/quarkus-app/quarkus-run.jar` 。"
 
 #. type: Plain text
@@ -957,7 +957,7 @@ msgstr "默认情况下，Quarkus不会发现另一个模块中的CDI Bean。"
 #. type: Plain text
 #: upstream/_guides/gradle-tooling.adoc:553
 #, fuzzy
-msgid "The best way to enable CDI bean discovery for a module in a multi-module project would be to include a `META-INF/beans.xml` file, unless it is the main application module already configured with the quarkus-maven-plugin, in which case it will indexed automatically."
+msgid "The best way to enable CDI bean discovery for a module in a multi-module project would be to include a `META-INF/beans.xml` file, unless it is the main application module already configured with the quarkus-maven-plugin, in which case it will be indexed automatically."
 msgstr "为多模块项目中的某个模块启用CDI Bean发现的最佳方式是包含一个 `META-INF/beans.xml` 文件，除非该模块是已经配置了quarkus-maven-plugin的主要应用模块，在这种情况下它会自动被索引。"
 
 #. type: Plain text

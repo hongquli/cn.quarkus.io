@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-06-29 15:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -164,7 +164,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/kafka-streams.adoc:72
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: delimited block =
 #: upstream/_guides/kafka-streams.adoc:74
@@ -1679,7 +1679,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/kafka-streams.adoc:915
 #, fuzzy
-msgid "Also the return type for `getMetaData()` must be defined (`aggregator/src/main/java/org/acme/kafka/streams/aggregator/streams/PipelineMetadata.java`):"
+msgid "Also, the return type for `getMetaData()` must be defined (`aggregator/src/main/java/org/acme/kafka/streams/aggregator/streams/PipelineMetadata.java`):"
 msgstr "同时必须定义 `getMetaData()` 的返回类型( `aggregator/src/main/java/org/acme/kafka/streams/aggregator/streams/PipelineMetadata.java` )。"
 
 #. type: delimited block -

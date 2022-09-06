@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-08-05 18:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -629,7 +629,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:323
 #, fuzzy
-msgid "See https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/_encrypted_communication.html[Elasticsearch documentation] for more details on this particular example."
+msgid "See https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/_encrypted_communication.html[Elasticsearch documentation] for more details on this particular example."
 msgstr "关于这个特定例子的更多细节，请参见 link:https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/_encrypted_communication.html[Elasticsearch文档] 。"
 
 #. type: delimited block =
@@ -661,7 +661,7 @@ msgstr "如果你想使用Docker来运行Elasticsearch实例，你可以使用�
 #, no-wrap
 msgid ""
 "docker run --name elasticsearch  -e \"discovery.type=single-node\" -e \"ES_JAVA_OPTS=-Xms512m -Xmx512m\"\\\n"
-"       --rm -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch-oss:{elasticsearch-version}\n"
+"       --rm -p 9200:9200 {elasticsearch-image}\n"
 msgstr ""
 
 #. type: Title ==
@@ -715,7 +715,7 @@ msgstr "Quarkus提供了对Elasticsearch高水平REST客户端的支持，但请
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:371
 #, fuzzy
-msgid "It drags a lot of dependencies - especially Lucene -, which doesn't fit well with Quarkus philosophy. The Elasticsearch team is aware of this issue and it might improve sometime in the future."
+msgid "It drags a lot of dependencies - especially Lucene -, which doesn't fit well with Quarkus philosophy. The Elasticsearch team is aware of this issue, and it might improve sometime in the future."
 msgstr "它拖累了很多的依赖关系--尤其是Lucene--这与Quarkus的理念不相符合。Elasticsearch团队意识到了这个问题，它可能会在未来某个时候得到改善。"
 
 #. type: Plain text
@@ -745,7 +745,7 @@ msgstr "请注意，与High Level REST客户端相反，我们使用的是Low Le
 #. type: delimited block =
 #: upstream/_guides/elasticsearch.adoc:390
 #, fuzzy
-msgid "We will eventually provide an extension for the new Open Source Java client but it will require changes in your applications as it is an entirely new client."
+msgid "We will eventually provide an extension for the new Open Source Java client, but it will require changes in your applications as it is an entirely new client."
 msgstr "我们最终将为新的开源Java客户端提供一个扩展，但由于它是一个全新的客户端，需要对你的应用程序进行修改。"
 
 #. type: Plain text
@@ -913,7 +913,7 @@ msgstr ""
 #: upstream/_guides/elasticsearch.adoc:494
 #, no-wrap
 msgid "Building a native executable"
-msgstr ""
+msgstr "构建一个本地可执行文件"
 
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:497
@@ -923,7 +923,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:499
 msgid "You can build a native executable with the usual command:"
-msgstr ""
+msgstr "你可以使用常用命令构建本机可执行文件："
 
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:503
@@ -933,13 +933,13 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:505
 msgid "You can then point your browser to `http://localhost:8080/fruits.html` and use your application."
-msgstr ""
+msgstr "然后你可以使用的浏览器访问 `<a href=\"http://localhost:8080/fruits.html\" class=\"bare\">http://localhost:8080/fruits.html</a>` 来使用你的应用程序。"
 
 #. type: Title ==
 #: upstream/_guides/elasticsearch.adoc:506
 #, no-wrap
 msgid "Conclusion"
-msgstr ""
+msgstr "解决方案"
 
 #. type: Plain text
 #: upstream/_guides/elasticsearch.adoc:509

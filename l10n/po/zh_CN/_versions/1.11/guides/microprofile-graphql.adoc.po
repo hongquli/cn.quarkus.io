@@ -185,7 +185,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:89
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:96
@@ -1434,7 +1434,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:788
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #. type: delimited block -
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:792
@@ -1536,7 +1536,7 @@ msgstr ""
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:851
 #, no-wrap
 msgid "Conclusion"
-msgstr ""
+msgstr "解决方案"
 
 #. type: Plain text
 #: upstream/_versions/1.11/guides/microprofile-graphql.adoc:855

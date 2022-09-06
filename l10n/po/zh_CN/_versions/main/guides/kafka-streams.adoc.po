@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:59+0000\n"
+"POT-Creation-Date: 2022-06-17 02:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -454,7 +454,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/main/guides/kafka-streams.adoc:246
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/main/guides/kafka-streams.adoc:254
@@ -525,7 +525,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/main/guides/kafka-streams.adoc:284
 msgid "The `@RegisterForReflection` annotation instructs Quarkus to keep the class and its members during the native compilation. More details about the `@RegisterForReflection` annotation can be found on the xref:writing-native-applications-tips.adoc#registerForReflection[native application tips] page."
-msgstr ""
+msgstr "`@RegisterForReflection` 注解用于指导Quarkus在native编译过程中保留该类和其成员。关于 `@RegisterForReflection` 注解的更多细节可以在 link:writing-native-applications-tips.html#registerForReflection[native应用程序提示] 页面找到。"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/kafka-streams.adoc:287
@@ -1601,7 +1601,7 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/kafka-streams.adoc:915
-msgid "Also the return type for `getMetaData()` must be defined (`aggregator/src/main/java/org/acme/kafka/streams/aggregator/streams/PipelineMetadata.java`):"
+msgid "Also, the return type for `getMetaData()` must be defined (`aggregator/src/main/java/org/acme/kafka/streams/aggregator/streams/PipelineMetadata.java`):"
 msgstr ""
 
 #. type: delimited block -

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-06-29 15:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "本指南的内容已经修订，并分成了更多的主题。请查看
 #. type: Plain text
 #: upstream/_guides/config.adoc:17
 #, fuzzy
-msgid "Hardcoded values in your code are a _no go_ (even if we all did it at some point ;-)).  In this guide, we will learn how to configure a Quarkus application."
+msgid "Hardcoded values in your code are a _no-go_ (even if we all did it at some point ;-)).  In this guide, we will learn how to configure a Quarkus application."
 msgstr "在你的代码中硬编码的值是 _不允许的_ （即使我们在某些时候都这样做;-)）。在本指南中，我们将学习如何配置一个Quarkus应用程序。"
 
 #. type: Title ==
@@ -59,7 +59,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/config.adoc:28
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: Plain text
 #: upstream/_guides/config.adoc:30
@@ -282,7 +282,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/config.adoc:132
 #, fuzzy
-msgid "Use `@io.smallrye.config.ConfigMapping` annotation to group multiple configurations in a single interface. Please, check the https://smallrye.io/docs/smallrye-config/main/mapping/mapping.html[Config Mappings] documentation."
+msgid "Use `@io.smallrye.config.ConfigMapping` annotation to group multiple configurations in a single interface. Please, check the https://smallrye.io/smallrye-config/latest/config/mappings/[Config Mappings] documentation."
 msgstr "使用 `@io.smallrye.config.ConfigMapping` 注释，在一个界面中分组多个配置。请查看 link:https://smallrye.io/docs/smallrye-config/main/mapping/mapping.html[配置映射] 文档。"
 
 #. type: Title ==
@@ -541,7 +541,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/config.adoc:240
 msgid "Logging"
-msgstr ""
+msgstr "日志"
 
 #. type: Plain text
 #: upstream/_guides/config.adoc:241
@@ -550,5 +550,6 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_guides/config.adoc:243
-msgid "For more information, please check the link:https://smallrye.io/docs/smallrye-config/index.html[SmallRye Config documentation]."
-msgstr ""
+#, fuzzy
+msgid "For more information, please check the link:https://smallrye.io/smallrye-config/latest/[SmallRye Config documentation]."
+msgstr "Quarkus依赖于 link:https://github.com/smallrye/smallrye-config/[SmallRye Config] 并继承了它的功能。"

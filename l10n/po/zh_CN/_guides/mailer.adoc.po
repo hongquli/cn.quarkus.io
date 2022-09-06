@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-08-31 11:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/mailer.adoc:37
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: Plain text
 #: upstream/_guides/mailer.adoc:39
@@ -402,7 +402,7 @@ msgstr "配置邮递员"
 #. type: Plain text
 #: upstream/_guides/mailer.adoc:179
 #, fuzzy
-msgid "It's time to configure the mailer to not simulate the sending of the emails.  The Quarkus mailer is using SMTP, so make sure you have access to a SMTP server."
+msgid "It's time to configure the mailer to not simulate the sending of the emails.  The Quarkus mailer is using SMTP, so make sure you have access to an SMTP server."
 msgstr "现在是配置邮件程序的时候了，不要模拟发送邮件。Quarkus邮件程序使用的是SMTP，所以要确保你能访问SMTP服务器。"
 
 #. type: Plain text
@@ -455,40 +455,45 @@ msgstr ""
 msgid "Once you have configured the mailer, if you call the HTTP endpoint as shown above, you will send emails."
 msgstr "一旦你配置了邮件程序，如果你如上所示调用HTTP端点，你就会发送邮件。"
 
+#. type: Plain text
+#: upstream/_guides/mailer.adoc:209
+msgid "Other popular mail services are covered in xref:mailer-reference.adoc#popular[the reference guide]."
+msgstr ""
+
 #. type: Title ==
-#: upstream/_guides/mailer.adoc:208
+#: upstream/_guides/mailer.adoc:210
 #, fuzzy, no-wrap
 msgid "Conclusion"
 msgstr "总结"
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:212
+#: upstream/_guides/mailer.adoc:214
 #, fuzzy
 msgid "This guide has shown how to send emails from your Quarkus application.  The xref:mailer-reference.adoc[mailer reference guide] provides more details about the mailer usage and configuration such as:"
 msgstr "本指南展示了如何从你的Quarkus应用程序中发送电子邮件。 link:mailer-reference.html[邮件参考指南] 提供了更多关于邮件使用和配置的细节，例如。"
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:214
+#: upstream/_guides/mailer.adoc:216
 #, fuzzy
 msgid "xref:mailer-reference.adoc#attachments[how to add attachments]"
 msgstr "link:mailer-reference.html#attachments[如何添加附件]"
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:215
+#: upstream/_guides/mailer.adoc:217
 msgid "xref:mailer-reference.adoc#html[how to format the email as HTML and use inline attachments]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:216
+#: upstream/_guides/mailer.adoc:218
 msgid "xref:mailer-reference.adoc#templates[how to use Qute templates]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:217
+#: upstream/_guides/mailer.adoc:219
 msgid "xref:mailer-reference.adoc#testing[how to test applications sending emails]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/mailer.adoc:218
+#: upstream/_guides/mailer.adoc:220
 msgid "xref:mailer-reference.adoc#gmail-specific-configuration[how to configure the mailer to send emails with GMAIL]"
 msgstr ""

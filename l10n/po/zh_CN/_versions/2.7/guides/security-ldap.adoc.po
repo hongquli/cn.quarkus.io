@@ -151,7 +151,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/security-ldap.adoc:75
 #, no-wrap
 msgid "Writing the application"
-msgstr ""
+msgstr "编写应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/security-ldap.adoc:78
@@ -326,7 +326,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/security-ldap.adoc:175
 #, no-wrap
 msgid "Testing the Application"
-msgstr ""
+msgstr "测试应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/security-ldap.adoc:179
@@ -453,7 +453,7 @@ msgstr "配置参考"
 #: upstream/_versions/2.7/guides/security-ldap.adoc:249
 #, no-wrap
 msgid "References"
-msgstr ""
+msgstr "参考文献"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/security-ldap.adoc:252

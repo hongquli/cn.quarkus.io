@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:59+0000\n"
+"POT-Creation-Date: 2022-08-24 03:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,7 +231,7 @@ msgstr ""
 #: upstream/_versions/main/guides/quartz.adoc:111
 #, no-wrap
 msgid "Creating a scheduled job"
-msgstr ""
+msgstr "创建一个计划作业"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/quartz.adoc:114
@@ -412,7 +412,7 @@ msgstr ""
 #: upstream/_versions/main/guides/quartz.adoc:196
 #, no-wrap
 msgid "Updating the application configuration file"
-msgstr ""
+msgstr "更新该应用程序的配置文件"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/quartz.adoc:199
@@ -830,7 +830,7 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/quartz.adoc:418
-msgid "It's the reponsibility of the deployer to clear/remove the previous state, i.e. stale jobs and triggers. Moreover, the applications that form the \"Quartz cluster\" should be identical, otherwise an unpredictable result may occur."
+msgid "It's the responsibility of the deployer to clear/remove the previous state, i.e. stale jobs and triggers. Moreover, the applications that form the \"Quartz cluster\" should be identical, otherwise an unpredictable result may occur."
 msgstr ""
 
 #. type: Title ==

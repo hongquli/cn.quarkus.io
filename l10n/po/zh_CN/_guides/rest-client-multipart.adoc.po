@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-08-05 18:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/rest-client-multipart.adoc:35
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: Plain text
 #: upstream/_guides/rest-client-multipart.adoc:37
@@ -118,7 +118,7 @@ msgstr "如果有效载荷未知，您也可以使用RESTEasy自定义API来代�
 #. type: Plain text
 #: upstream/_guides/rest-client-multipart.adoc:62
 #, fuzzy
-msgid "Our first order of business is to setup the model we will be using to define the `multipart/form-data` payload, in the form of a `MultipartBody` POJO."
+msgid "Our first order of business is to set up the model we will be using to define the `multipart/form-data` payload, in the form of a `MultipartBody` POJO."
 msgstr "我们的首要任务是设置我们将用来定义 `multipart/form-data` 有效载荷的模型，其形式为 `MultipartBody` POJO。"
 
 #. type: Plain text
@@ -279,7 +279,7 @@ msgstr " `@RegisterRestClient` 允许Quarkus知道这个接口是用来作为RES
 #. type: Plain text
 #: upstream/_guides/rest-client-multipart.adoc:132
 #, fuzzy
-msgid "`@Path`, `@GET` and `@PathParam` are the standard JAX-RS annotations used to define how to access the service"
+msgid "`@Path` and `@POST` are the standard JAX-RS annotations used to define how to access the service"
 msgstr " `@Path` , `@GET` 和 `@PathParam` 是标准的 JAX-RS 注解，用于定义如何访问服务。"
 
 #. type: Plain text
@@ -527,7 +527,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/rest-client-multipart.adoc:264
 #, fuzzy
-msgid "The code above uses link:http://rest-assured.io/[REST Assured] to assert that the returned content from the echo service contains multipart elements"
+msgid "The code above uses link:https://rest-assured.io/[REST Assured] to assert that the returned content from the echo service contains multipart elements"
 msgstr "上面的代码使用 link:http://rest-assured.io/[REST Assured] 来断言从echo服务返回的内容包含多部分元素"
 
 #. type: Plain text

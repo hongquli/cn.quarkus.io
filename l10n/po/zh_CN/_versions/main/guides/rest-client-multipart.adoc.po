@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:59+0000\n"
+"POT-Creation-Date: 2022-07-28 02:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/rest-client-multipart.adoc:62
-msgid "Our first order of business is to setup the model we will be using to define the `multipart/form-data` payload, in the form of a `MultipartBody` POJO."
+msgid "Our first order of business is to set up the model we will be using to define the `multipart/form-data` payload, in the form of a `MultipartBody` POJO."
 msgstr ""
 
 #. type: Plain text
@@ -258,7 +258,7 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/rest-client-multipart.adoc:132
-msgid "`@Path`, `@GET` and `@PathParam` are the standard JAX-RS annotations used to define how to access the service"
+msgid "`@Path` and `@POST` are the standard JAX-RS annotations used to define how to access the service"
 msgstr ""
 
 #. type: Plain text
@@ -290,7 +290,7 @@ msgstr ""
 #: upstream/_versions/main/guides/rest-client-multipart.adoc:144
 #, no-wrap
 msgid "Create the configuration"
-msgstr ""
+msgstr "创建配置"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/rest-client-multipart.adoc:148
@@ -491,7 +491,7 @@ msgstr ""
 
 #. type: Plain text
 #: upstream/_versions/main/guides/rest-client-multipart.adoc:264
-msgid "The code above uses link:http://rest-assured.io/[REST Assured] to assert that the returned content from the echo service contains multipart elements"
+msgid "The code above uses link:https://rest-assured.io/[REST Assured] to assert that the returned content from the echo service contains multipart elements"
 msgstr ""
 
 #. type: Plain text

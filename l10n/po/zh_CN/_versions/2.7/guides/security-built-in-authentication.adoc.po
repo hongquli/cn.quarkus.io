@@ -204,7 +204,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/security-built-in-authentication.adoc:105
 #, no-wrap
 msgid "Proactive Authentication"
-msgstr ""
+msgstr "主动认证"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/security-built-in-authentication.adoc:109
@@ -292,7 +292,7 @@ msgstr ""
 #: upstream/_versions/2.7/guides/security-built-in-authentication.adoc:156
 #, no-wrap
 msgid "References"
-msgstr ""
+msgstr "参考文献"
 
 #. type: Plain text
 #: upstream/_versions/2.7/guides/security-built-in-authentication.adoc:158

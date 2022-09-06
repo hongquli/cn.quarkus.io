@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-06-29 15:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "我们建议你按照下面几节的说明，一步一步地创建应用
 #: upstream/_guides/grpc-getting-started.adoc:22
 #, fuzzy
 msgid "Clone the Git repository: `git clone {quickstarts-clone-url}`, or download an {quickstarts-archive-url}[archive]."
-msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个{quickstarts-archive-url}[存档]。"
+msgstr "克隆 Git 仓库。 `git clone {quickstarts-clone-url}` ，或者下载一个 {quickstarts-archive-url}[存档] 。"
 
 #. type: Plain text
 #: upstream/_guides/grpc-getting-started.adoc:24
@@ -86,7 +86,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_guides/grpc-getting-started.adoc:40
 #, fuzzy
-msgid "By default the `quarkus-grpc` extension relies on the reactive programming model.  In this guide we will follow a reactive approach.  Under the dependencies section of your `pom.xml` file, make sure you have the RESTEasy Reactive dependency:"
+msgid "By default, the `quarkus-grpc` extension relies on the reactive programming model.  In this guide we will follow a reactive approach.  Under the `dependencies` section of your `pom.xml` file, make sure you have the RESTEasy Reactive dependency:"
 msgstr "默认情况下， `quarkus-grpc` 扩展依赖于反应式编程模型。在本指南中，我们将遵循一个反应式方法。在你的 `pom.xml` 文件的依赖关系部分，确保你有RESTEasy Reactive的依赖关系。"
 
 #. type: delimited block -

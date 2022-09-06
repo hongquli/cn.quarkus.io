@@ -155,7 +155,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-ldap.adoc:69
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/security-ldap.adoc:76
@@ -171,7 +171,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-ldap.adoc:78
 #, no-wrap
 msgid "Writing the application"
-msgstr ""
+msgstr "编写应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-ldap.adoc:81
@@ -346,7 +346,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-ldap.adoc:178
 #, no-wrap
 msgid "Testing the Application"
-msgstr ""
+msgstr "测试应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-ldap.adoc:182
@@ -468,7 +468,7 @@ msgstr "配置参考"
 #: upstream/_versions/2.2/guides/security-ldap.adoc:248
 #, no-wrap
 msgid "References"
-msgstr ""
+msgstr "参考文献"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-ldap.adoc:251

@@ -108,7 +108,7 @@ msgstr "克隆 Git 仓库: `git clone {quickstarts-clone-url}` ，或下载一�
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:44
 msgid "The solution is located in the `amqp-quickstart` {quickstarts-tree-url}/amqp-quickstart[directory]."
-msgstr ""
+msgstr "解决方案位于 `amqp-quickstart` {quickstarts-tree-url}/amqp-quickstart[目录]中。"
 
 #. type: Title ==
 #: upstream/_versions/1.11/guides/amqp.adoc:45
@@ -434,12 +434,12 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:214
 msgid "Indicates that the content is sent using `Server Sent Events`"
-msgstr ""
+msgstr "表示内容是使用 `Server Sent Events` 发送的"
 
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:215
 msgid "Returns the stream (_Reactive Stream_)"
-msgstr ""
+msgstr "返回流 (_Reactive Stream_) 。"
 
 #. type: Title ==
 #: upstream/_versions/1.11/guides/amqp.adoc:216
@@ -455,7 +455,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:222
 msgid "`mp.messaging.[outgoing|incoming].{channel-name}.property=value`"
-msgstr ""
+msgstr "`mp.messaging.[outgoing|incoming].{channel-name}.property=value` "
 
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:224
@@ -518,7 +518,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:249
 msgid "Final touch, the HTML page reading the converted prices using SSE."
-msgstr ""
+msgstr "最后，HTML页面使用SSE读取转换后的价格。"
 
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:251
@@ -637,7 +637,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/1.11/guides/amqp.adoc:317
 msgid "For this, you can use an `Emitter`."
-msgstr ""
+msgstr "这种情况下您可以使用 `Emitter` 。"
 
 #. type: delimited block -
 #: upstream/_versions/1.11/guides/amqp.adoc:322
@@ -693,32 +693,32 @@ msgstr ""
 #: upstream/_versions/1.11/guides/amqp.adoc:346
 #, no-wrap
 msgid "Deprecation"
-msgstr ""
+msgstr "弃用"
 
 #. type: delimited block =
 #: upstream/_versions/1.11/guides/amqp.adoc:349
 msgid "The `io.smallrye.reactive.messaging.annotations.Emitter`, `io.smallrye.reactive.messaging.annotations.Channel` and `io.smallrye.reactive.messaging.annotations.OnOverflow` classes are now deprecated and replaced by:"
-msgstr ""
+msgstr "`io.smallrye.reactive.messaging.annotations.Emitter` , `io.smallrye.reactive.messaging.annotations.Channel` 和 `io.smallrye.reactive.messaging.annotations.OnOverflow` 类现在已被废弃，并被替换为："
 
 #. type: delimited block =
 #: upstream/_versions/1.11/guides/amqp.adoc:351
 msgid "`org.eclipse.microprofile.reactive.messaging.Emitter`"
-msgstr ""
+msgstr "`org.eclipse.microprofile.reactive.messaging.Emitter`"
 
 #. type: delimited block =
 #: upstream/_versions/1.11/guides/amqp.adoc:352
 msgid "`org.eclipse.microprofile.reactive.messaging.Channel`"
-msgstr ""
+msgstr "`org.eclipse.microprofile.reactive.messaging.Channel`"
 
 #. type: delimited block =
 #: upstream/_versions/1.11/guides/amqp.adoc:353
 msgid "`org.eclipse.microprofile.reactive.messaging.OnOverflow`"
-msgstr ""
+msgstr "`org.eclipse.microprofile.reactive.messaging.OnOverflow`"
 
 #. type: delimited block =
 #: upstream/_versions/1.11/guides/amqp.adoc:355
 msgid "The new `Emitter.send` method returns a `CompletionStage` completed when the produced message is acknowledged."
-msgstr ""
+msgstr "新的 `Emitter.send` 方法会返回一个 `CompletionStage` ，并且它会在产生的消息被确认时完成。"
 
 #. type: Title ==
 #: upstream/_versions/1.11/guides/amqp.adoc:357

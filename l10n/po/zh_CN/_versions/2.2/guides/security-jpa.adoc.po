@@ -160,7 +160,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-jpa.adoc:75
 msgid "This will add the following to your `pom.xml`:"
-msgstr ""
+msgstr "这将在你的 `pom.xml` 中添加以下内容："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/security-jpa.adoc:82
@@ -176,7 +176,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-jpa.adoc:84
 #, no-wrap
 msgid "Writing the application"
-msgstr ""
+msgstr "编写应用程序"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-jpa.adoc:87
@@ -228,7 +228,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-jpa.adoc:111
 msgid "The source code for the `/api/admin` endpoint is also very simple. The main difference here is that we are using a `@RolesAllowed` annotation to make sure that only users granted with the `admin` role can access the endpoint:"
-msgstr ""
+msgstr "端点 `/api/admin` 的源代码也非常简单。这里的主要区别是，我们使用 `@RolesAllowed` 注解来确保只有被授予 `admin` 角色的用户才能访问该端点："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/security-jpa.adoc:122
@@ -469,7 +469,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-jpa.adoc:261
 #, no-wrap
 msgid "Testing the Application"
-msgstr ""
+msgstr "测试应用程序"
 
 #. type: delimited block =
 #: upstream/_versions/2.2/guides/security-jpa.adoc:266
@@ -766,7 +766,7 @@ msgstr ""
 #: upstream/_versions/2.2/guides/security-jpa.adoc:418
 #, no-wrap
 msgid "References"
-msgstr ""
+msgstr "参考文献"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/security-jpa.adoc:420

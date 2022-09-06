@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:52+0000\n"
+"POT-Creation-Date: 2022-08-24 13:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "然而，当索赔是敏感的，它们的保密性可以通过遵循 li
 #. type: Plain text
 #: upstream/_guides/security-jwt-build.adoc:18
 #, fuzzy
-msgid "Finally both the confidentiality and integrity of the claims can be further enforced by signing them first and then encrypting the nested JWT token."
+msgid "Finally, both the confidentiality and integrity of the claims can be further enforced by signing them first and then encrypting the nested JWT token."
 msgstr "最后，索赔的保密性和完整性可以通过首先签署它们，然后对嵌套的JWT令牌进行加密来进一步强制执行。"
 
 #. type: Plain text
@@ -199,8 +199,8 @@ msgstr "债权可以立即签署，也可以在设置 `JSON Web Signature` heade
 
 #. type: delimited block -
 #: upstream/_guides/security-jwt-build.adoc:94
-#: upstream/_guides/security-jwt-build.adoc:148
-#: upstream/_guides/security-jwt-build.adoc:213
+#: upstream/_guides/security-jwt-build.adoc:149
+#: upstream/_guides/security-jwt-build.adoc:215
 #, no-wrap
 msgid ""
 "import io.smallrye.jwt.build.Jwt;\n"
@@ -234,7 +234,7 @@ msgstr "注意 `alg` （算法）头默认设置为 `RS256` 。如果使用一�
 #. type: Plain text
 #: upstream/_guides/security-jwt-build.adoc:108
 #, fuzzy
-msgid "RSA and Elliptic Curve (EC) private keys as well as symmetric secret keys can be used to sign the claims.  `ES256` and `HS256` are the defaut algorithms for EC private and symmetric key algorithms respectively."
+msgid "RSA and Elliptic Curve (EC) private keys as well as symmetric secret keys can be used to sign the claims.  `ES256` and `HS256` are the default algorithms for EC private and symmetric key algorithms respectively."
 msgstr "RSA和椭圆曲线（EC）私钥以及对称秘钥可用于签署索赔。 `ES256` 和 `HS256` 分别是EC私钥和对称密钥算法的defaut算法。"
 
 #. type: Plain text
@@ -265,28 +265,28 @@ msgstr ""
 msgid "Alternatively you can use a `smallrye.jwt.new-token.signature-algorithm` property:"
 msgstr "另外，你也可以使用 `smallrye.jwt.new-token.signature-algorithm` 财产。"
 
-#. type: Plain text
+#. type: delimited block -
 #: upstream/_guides/security-jwt-build.adoc:125
-#, fuzzy
-msgid "```properties smallrye.jwt.new-token.signature-algorithm=PS256 ```"
-msgstr " `` "
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.new-token.signature-algorithm=PS256\n"
+msgstr "Smallrye.jwt.new-token.signature-algorithm"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:127
-#: upstream/_guides/security-jwt-build.adoc:190
+#: upstream/_guides/security-jwt-build.adoc:128
+#: upstream/_guides/security-jwt-build.adoc:192
 #, fuzzy
 msgid "and write a simpler API sequence:"
 msgstr "并编写一个更简单的API序列。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:131
-#: upstream/_guides/security-jwt-build.adoc:194
+#: upstream/_guides/security-jwt-build.adoc:132
+#: upstream/_guides/security-jwt-build.adoc:196
 #, no-wrap
 msgid "import io.smallrye.jwt.build.Jwt;\n"
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:134
+#: upstream/_guides/security-jwt-build.adoc:135
 #, no-wrap
 msgid ""
 "// Sign the claims using an RSA private key loaded from the location set with a 'smallrye.jwt.sign.key.location' property. Algorithm is PS256.\n"
@@ -294,25 +294,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:137
+#: upstream/_guides/security-jwt-build.adoc:138
 #, fuzzy
 msgid "Note the `sign` step can be combined with the <<encrypt-claims, encrypt>> step to produce `inner-signed and encrypted` tokens, see <<innersign-encrypt-claims, Sign the claims and encrypt the nested JWT token>> section."
 msgstr "注意 `sign` 步骤可以与 link:#encrypt-claims[加密] 步骤相结合，以产生 `inner-signed and encrypted` 令牌，见 link:#innersign-encrypt-claims[签署索赔和加密嵌套 JWT 令牌] 部分。"
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:139
+#: upstream/_guides/security-jwt-build.adoc:140
 #, fuzzy, no-wrap
 msgid "Encrypt the claims"
 msgstr "加密索赔"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:143
+#: upstream/_guides/security-jwt-build.adoc:144
 #, fuzzy
 msgid "The claims can be encrypted immediately or after the `JSON Web Encryption` headers have been set the same way as they can be signed.  The only minor difference is that encrypting the claims always requires a `jwe()` `JwtEncryptionBuilder` transition given that the API has been optimized to support signing and inner-signing of the claims."
 msgstr "索赔可以立即加密，也可以在设置 `JSON Web Encryption` 头信息后加密，这与签名的方式相同。唯一的细微差别是，鉴于API已经被优化以支持签名和内部签名的索赔，加密索赔总是需要 `jwe()` `JwtEncryptionBuilder` 。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:151
+#: upstream/_guides/security-jwt-build.adoc:152
 #, no-wrap
 msgid ""
 "// Encrypt the claims using an RSA public key loaded from the location set with a 'smallrye.jwt.encrypt.key.location' property. Default key encryption algorithm is RSA-OAEP.\n"
@@ -320,7 +320,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:154
+#: upstream/_guides/security-jwt-build.adoc:155
 #, no-wrap
 msgid ""
 "// Set the headers and encrypt the claims with an RSA public key loaded in the code (the implementation of this method is omitted).  Default key encryption algorithm is A256KW.\n"
@@ -328,43 +328,43 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:157
+#: upstream/_guides/security-jwt-build.adoc:158
 #, fuzzy
 msgid "Note the `alg` (key management algorithm) header is set to `RSA-OAEP` and the `enc` (content encryption header) is set to `A256GCM` by default."
 msgstr "注意 `alg` （密钥管理算法）头被设置为 `RSA-OAEP` ， `enc` （内容加密头）默认设置为 `A256GCM` 。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:160
+#: upstream/_guides/security-jwt-build.adoc:161
 #, fuzzy
-msgid "RSA and Elliptic Curve (EC) public keys as well as symmetric secret keys can be used to encrypt the claims.  `ECDH-ES` and `A256KW` are the defaut algorithms for EC public and symmetric key encryption algorithms respectively."
+msgid "RSA and Elliptic Curve (EC) public keys as well as symmetric secret keys can be used to encrypt the claims.  `ECDH-ES` and `A256KW` are the default algorithms for EC public and symmetric key encryption algorithms respectively."
 msgstr "RSA和椭圆曲线（EC）公钥以及对称秘钥可用于加密索赔。 `ECDH-ES` 和 `A256KW` 分别是EC公钥和对称密钥加密算法的defaut算法。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:162
+#: upstream/_guides/security-jwt-build.adoc:163
 #, fuzzy
-msgid "Note two encryption operations are done when creating an ecrypted token:"
+msgid "Note two encryption operations are done when creating an encrypted token:"
 msgstr "注意在创建加密令牌时要进行两次加密操作。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:164
+#: upstream/_guides/security-jwt-build.adoc:165
 #, fuzzy
 msgid "the generated content encryption key is encrypted by the key supplied with the API using the key encryption algorithm such as `RSA-OAEP`"
 msgstr "生成的内容加密密钥由API提供的密钥进行加密，使用密钥加密算法，如 `RSA-OAEP` "
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:165
+#: upstream/_guides/security-jwt-build.adoc:166
 #, fuzzy
-msgid "the claims are encryped by the generated content encryption key using the content encryption algorithm such as `A256GCM`."
+msgid "the claims are encrypted by the generated content encryption key using the content encryption algorithm such as `A256GCM`."
 msgstr "使用生成的内容加密算法，如 `A256GCM` ，对索赔进行加密。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:167
+#: upstream/_guides/security-jwt-build.adoc:168
 #, fuzzy
 msgid "You can customize the key and content encryption algorithms, for example:"
 msgstr "例如，你可以定制密钥和内容加密算法。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:173
+#: upstream/_guides/security-jwt-build.adoc:174
 #, no-wrap
 msgid ""
 "import io.smallrye.jwt.KeyEncryptionAlgorithm;\n"
@@ -373,7 +373,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:180
+#: upstream/_guides/security-jwt-build.adoc:181
 #, no-wrap
 msgid ""
 "// Encrypt the claims using an RSA public key loaded from the location set with a 'smallrye.jwt.encrypt.key.location' property.\n"
@@ -385,19 +385,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:183
+#: upstream/_guides/security-jwt-build.adoc:184
 #, fuzzy
 msgid "Alternatively you can use `smallrye.jwt.new-token.key-encryption-algorithm` and `smallrye.jwt.new-token.content-encryption-algorithm` properties to customize the key and content encryption algorithms:"
 msgstr "另外，你可以使用 `smallrye.jwt.new-token.key-encryption-algorithm` 和 `smallrye.jwt.new-token.content-encryption-algorithm` 属性来定制密钥和内容加密算法。"
 
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:188
-#, fuzzy
-msgid "```properties smallrye.jwt.new-token.key-encryption-algorithm=RSA-OAEP-256 smallrye.jwt.new-token.content-encryption-algorithm=A256CBC-HS512 ```"
+#. type: delimited block -
+#: upstream/_guides/security-jwt-build.adoc:189
+#, fuzzy, no-wrap
+msgid ""
+"smallrye.jwt.new-token.key-encryption-algorithm=RSA-OAEP-256\n"
+"smallrye.jwt.new-token.content-encryption-algorithm=A256CBC-HS512\n"
 msgstr " `` "
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:198
+#: upstream/_guides/security-jwt-build.adoc:200
 #, no-wrap
 msgid ""
 "// Encrypt the claims using an RSA public key loaded from the location set with a 'smallrye.jwt.encrypt.key.location' property.\n"
@@ -406,31 +408,31 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:202
+#: upstream/_guides/security-jwt-build.adoc:204
 #, fuzzy
-msgid "Note that when the token is directly encrypted by the public RSA or EC key it is not possible to verify which party sent the token.  Therefore the secret keys should be preferred for directly encrypting the tokens, for example, when using JWT as cookies where a secret key is managed by the Quarkus endpoint with only this endpoint being both a producer and a consumer of the encrypted token."
+msgid "Note that when the token is directly encrypted by the public RSA or EC key it is not possible to verify which party sent the token.  Therefore, the secret keys should be preferred for directly encrypting the tokens, for example, when using JWT as cookies where a secret key is managed by the Quarkus endpoint with only this endpoint being both a producer and a consumer of the encrypted token."
 msgstr "请注意，当令牌被公共RSA或EC密钥直接加密时，不可能验证哪一方发送了令牌。因此，在直接加密令牌时应首选秘密密钥，例如，当使用JWT作为cookies时，秘密密钥由Quarkus端点管理，只有这个端点既是加密令牌的生产者也是消费者。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:204
+#: upstream/_guides/security-jwt-build.adoc:206
 #, fuzzy
 msgid "If you would like to use RSA or EC public keys to encrypt the token then it is recommended to sign the token first if the signing key is available, see the next <<innersign-encrypt-claims, Sign the claims and encrypt the nested JWT token>> section."
 msgstr "如果你想使用RSA或EC公钥来加密令牌，那么如果签名密钥可用的话，建议先对令牌进行签名，见接下来的 link:#innersign-encrypt-claims[签名声明和加密嵌套JWT令牌] 部分。"
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:206
+#: upstream/_guides/security-jwt-build.adoc:208
 #, fuzzy, no-wrap
 msgid "Sign the claims and encrypt the nested JWT token"
 msgstr "对索赔进行签名并对嵌套的JWT令牌进行加密"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:209
+#: upstream/_guides/security-jwt-build.adoc:211
 #, fuzzy
 msgid "The claims can be signed and then the nested JWT token encrypted by combining the sign and encrypt steps."
 msgstr "可以对索赔进行签名，然后通过结合签名和加密步骤对嵌套的JWT令牌进行加密。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:216
+#: upstream/_guides/security-jwt-build.adoc:218
 #, no-wrap
 msgid ""
 "// Sign the claims and encrypt the nested token using the private and public keys loaded from the locations set with the 'smallrye.jwt.sign.key.location' and 'smallrye.jwt.encrypt.key.location' properties respectively. Signature algorithm is RS256, key encryption algorithm is RSA-OAEP-256.\n"
@@ -438,19 +440,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:218
+#: upstream/_guides/security-jwt-build.adoc:220
 #, fuzzy, no-wrap
 msgid "Fast JWT Generation"
 msgstr "快速生成JWT"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:221
+#: upstream/_guides/security-jwt-build.adoc:223
 #, fuzzy
 msgid "If `smallrye.jwt.sign.key.location` or/and `smallrye.jwt.encrypt.key.location` properties are set then one can secure the existing claims (resources, maps, JsonObjects) with a single call:"
 msgstr "如果 `smallrye.jwt.sign.key.location` 或/和 `smallrye.jwt.encrypt.key.location` 属性被设置，那么人们可以通过一次调用来确保现有的索赔（资源、地图、JsonObjects）。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:226
+#: upstream/_guides/security-jwt-build.adoc:228
 #, no-wrap
 msgid ""
 "// More compact than Jwt.claims(\"/claims.json\").sign();\n"
@@ -458,7 +460,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:229
+#: upstream/_guides/security-jwt-build.adoc:231
 #, no-wrap
 msgid ""
 "// More compact than Jwt.claims(\"/claims.json\").jwe().encrypt();\n"
@@ -466,7 +468,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:232
+#: upstream/_guides/security-jwt-build.adoc:234
 #, no-wrap
 msgid ""
 "// More compact than Jwt.claims(\"/claims.json\").innerSign().encrypt();\n"
@@ -474,25 +476,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:234
+#: upstream/_guides/security-jwt-build.adoc:236
 #, fuzzy
 msgid "As mentioned above, `iat` (issued at), `exp` (expires at), `jti` (token identifier), `iss` (issuer) and `aud` (audience) claims will be added if needed."
 msgstr "如上所述，如有需要，将添加 `iat` （签发时间）、 `exp` （失效时间）、 `jti` （令牌标识符）、 `iss` （签发者）和 `aud` （受众）的要求。"
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:235
+#: upstream/_guides/security-jwt-build.adoc:237
 #, fuzzy, no-wrap
 msgid "Dealing with the keys"
 msgstr "处理钥匙的问题"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:238
+#: upstream/_guides/security-jwt-build.adoc:240
 #, fuzzy
 msgid "`smallrye.jwt.sign.key.location` and `smallrye.jwt.encrypt.key.location` properties can be used to point to signing and encryption key locations. The keys can be located on the local file system, classpath, or fetched from the remote endpoints and can be in `PEM` or `JSON Web Key` (`JWK`) formats. For example:"
 msgstr " `smallrye.jwt.sign.key.location` 和 属性可被用来指向签名和加密密钥的位置。密钥可以位于本地文件系统、classpath或从远程端点获取，可以是 或 ( ) 格式。例如。 `smallrye.jwt.encrypt.key.location` `PEM` `JSON Web Key` `JWK` "
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:243
+#: upstream/_guides/security-jwt-build.adoc:245
 #, no-wrap
 msgid ""
 "smallrye.jwt.sign.key=privateKey.pem\n"
@@ -500,13 +502,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:246
+#: upstream/_guides/security-jwt-build.adoc:248
 #, fuzzy
 msgid "You can also use MicroProfile `ConfigSource` to fetch the keys from the external services such as link:{vault-guide}[HashiCorp Vault] or other secret managers and use `smallrye.jwt.sign.key` and `smallrye.jwt.encrypt.key` properties instead:"
 msgstr "你也可以使用MicroProfile `ConfigSource` 从外部服务（如 link:{vault-guide}[HashiCorp Vault] 或其他秘密管理器）获取密钥，并使用 `smallrye.jwt.sign.key` 和 `smallrye.jwt.encrypt.key` 属性来代替。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:251
+#: upstream/_guides/security-jwt-build.adoc:253
 #, no-wrap
 msgid ""
 "smallrye.jwt.sign.key=${private.key.from.vault}\n"
@@ -514,37 +516,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:255
+#: upstream/_guides/security-jwt-build.adoc:257
 #, fuzzy
 msgid "where both `private.key.from.vault` and `public.key.from.vault` are the `PEM` or `JWK` formatted key values provided by the custom `ConfigSource`.  `smallrye.jwt.sign.key` and `smallrye.jwt.encrypt.key` can also contain only the Base64-encoded private or public keys values."
 msgstr " `ConfigSource` 其中 `private.key.from.vault` 和 `public.key.from.vault` 都是自定义 `PEM` 或 `JWK` 提供的格式化密钥值。 `smallrye.jwt.sign.key` 和 `smallrye.jwt.encrypt.key` 也可以只包含Base64编码的私钥或公钥值。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:257
+#: upstream/_guides/security-jwt-build.adoc:259
 #, fuzzy
 msgid "However, please note, directly inlining the private keys in the configuration is not recommended. Use the `smallrye.jwt.sign.key` property only if you need to fetch a signing key value from the remote secret manager."
 msgstr "然而，请注意，不建议在配置中直接内联私钥。只有当你需要从远程秘密管理器中获取一个签名密钥值时，才使用 `smallrye.jwt.sign.key` 属性。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:259
+#: upstream/_guides/security-jwt-build.adoc:261
 #, fuzzy
 msgid "The keys can also be loaded by the code which builds the token and supplied to JWT Build API."
 msgstr "密钥也可以由构建令牌的代码加载并提供给JWT Build API。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:261
+#: upstream/_guides/security-jwt-build.adoc:263
 #, fuzzy
 msgid "If you need to sign and/or encrypt the token using the symmetric secret key then consider using `io.smallrye.jwt.util.KeyUtils` to generate a SecretKey of the required length."
 msgstr "如果你需要使用对称秘钥对令牌进行签名和/或加密，那么可以考虑使用 `io.smallrye.jwt.util.KeyUtils` ，生成一个所需长度的秘钥。"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:263
+#: upstream/_guides/security-jwt-build.adoc:265
 #, fuzzy
 msgid "For example, one needs to have a 64 byte key to sign using the `HS512` algorithm (`512/8`) and a 32 byte key to encrypt the content encryption key with the `A256KW` algorithm (`256/8`):"
 msgstr "例如，人们需要有一个64字节的密钥来使用 `HS512` 算法( `512/8` )进行签名，并需要一个32字节的密钥来使用 `A256KW` 算法( `256/8` )加密内容加密密钥。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:271
+#: upstream/_guides/security-jwt-build.adoc:273
 #, no-wrap
 msgid ""
 "import javax.crypto.SecretKey;\n"
@@ -555,7 +557,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:275
+#: upstream/_guides/security-jwt-build.adoc:277
 #, no-wrap
 msgid ""
 "SecretKey signingKey = KeyUtils.generateSecretKey(SignatureAlgorithm.HS512);\n"
@@ -564,13 +566,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:278
+#: upstream/_guides/security-jwt-build.adoc:280
 #, fuzzy
 msgid "You can also consider using a `JSON Web Key` (JWK) or `JSON Web Key Set` (JWK Set) format to store a secret key on a secure file system and refer to it using either `smallrye.jwt.sign.key.location` or `smallrye.jwt.encrypt.key.location` properties, for example:"
 msgstr "你也可以考虑使用 `JSON Web Key` （JWK）或 `JSON Web Key Set` （JWK Set）格式，在安全文件系统中存储秘密密钥，并使用 `smallrye.jwt.sign.key.location` 或 `smallrye.jwt.encrypt.key.location` 属性来引用它，例如。"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:286
+#: upstream/_guides/security-jwt-build.adoc:288
 #, no-wrap
 msgid ""
 "{\n"
@@ -581,13 +583,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:289
+#: upstream/_guides/security-jwt-build.adoc:291
 #, fuzzy
 msgid "or"
 msgstr "或"
 
 #. type: delimited block -
-#: upstream/_guides/security-jwt-build.adoc:306
+#: upstream/_guides/security-jwt-build.adoc:308
 #, no-wrap
 msgid ""
 "{\n"
@@ -607,318 +609,405 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:309
+#: upstream/_guides/security-jwt-build.adoc:311
 #, fuzzy
-msgid "`io.smallrye.jwt.util.KeyUtils` can also be used to generate a pair of assymetric RSA or EC keys. These keys can be stored using a `JWK`, `JWK Set` or `PEM` format."
+msgid "`io.smallrye.jwt.util.KeyUtils` can also be used to generate a pair of asymmetric RSA or EC keys. These keys can be stored using a `JWK`, `JWK Set` or `PEM` format."
 msgstr " `io.smallrye.jwt.util.KeyUtils` 也可以用来生成一对非对称的RSA或EC密钥。这些密钥可以使用 , 或 的格式来存储。 `JWK` `JWK Set` `PEM` "
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:310
+#: upstream/_guides/security-jwt-build.adoc:312
 #, fuzzy, no-wrap
 msgid "SmallRye JWT Builder configuration"
 msgstr "SmallRye JWT Builder配置"
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:313
+#: upstream/_guides/security-jwt-build.adoc:315
 #, fuzzy
 msgid "SmallRye JWT supports the following properties which can be used to customize the way claims are signed and/or encrypted:"
 msgstr "SmallRye JWT支持以下属性，可用于自定义签名和/或加密索赔的方式。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:316
+#: upstream/_guides/security-jwt-build.adoc:318
 #, fuzzy, no-wrap
 msgid "Property Nam"
 msgstr "财产南"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:316
+#: upstream/_guides/security-jwt-build.adoc:318
 #, fuzzy, no-wrap
 msgid "Default"
 msgstr "默认情况下"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:317
+#: upstream/_guides/security-jwt-build.adoc:319
 #, fuzzy, no-wrap
 msgid "Description"
 msgstr "描述"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:317
+#: upstream/_guides/security-jwt-build.adoc:319
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.sign.key.location"
 msgstr "Smallrye.jwt.sign.key.location"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:317
 #: upstream/_guides/security-jwt-build.adoc:319
-#: upstream/_guides/security-jwt-build.adoc:320
-#: upstream/_guides/security-jwt-build.adoc:323
+#: upstream/_guides/security-jwt-build.adoc:321
+#: upstream/_guides/security-jwt-build.adoc:322
+#: upstream/_guides/security-jwt-build.adoc:325
 #, fuzzy, no-wrap
 msgid "`none`"
 msgstr " `none` "
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:318
+#: upstream/_guides/security-jwt-build.adoc:320
 #, fuzzy, no-wrap
 msgid "Location of a private key which will be used to sign the claims when either a no-argument `sign()` or `innerSign()` method is called."
 msgstr "私钥的位置，当调用无参数的 `sign()` 或 `innerSign()` 方法时，该私钥将被用于签署索赔。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:318
+#: upstream/_guides/security-jwt-build.adoc:320
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.sign.key"
 msgstr "Smallrye.jwt.sign.key"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:318
-#: upstream/_guides/security-jwt-build.adoc:322
-#: upstream/_guides/security-jwt-build.adoc:329
-#: upstream/_guides/security-jwt-build.adoc:330
+#: upstream/_guides/security-jwt-build.adoc:320
+#: upstream/_guides/security-jwt-build.adoc:324
+#: upstream/_guides/security-jwt-build.adoc:331
+#: upstream/_guides/security-jwt-build.adoc:332
 #, fuzzy, no-wrap
 msgid "non"
 msgstr "非"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:319
+#: upstream/_guides/security-jwt-build.adoc:321
 #, fuzzy, no-wrap
 msgid "Key value which will be used to sign the claims when either a no-argument sign() or innerSign() method is called."
 msgstr "当调用无参数的sign()或innerSign()方法时，将用于签署索赔的密钥值。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:319
+#: upstream/_guides/security-jwt-build.adoc:321
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.sign.key.i"
 msgstr "Smallrye.jwt.sign.key.i"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:320
+#: upstream/_guides/security-jwt-build.adoc:322
 #, fuzzy, no-wrap
 msgid "Signing key identifier which is checked only when JWK keys are used."
 msgstr "签名钥匙的标识符，只有在使用JWK钥匙时才会检查。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:320
+#: upstream/_guides/security-jwt-build.adoc:322
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.encrypt.key.location"
 msgstr "Smallrye.jwt.encrypt.key.location"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:321
+#: upstream/_guides/security-jwt-build.adoc:323
 #, fuzzy, no-wrap
 msgid "Location of a public key which will be used to encrypt the claims or inner JWT when a no-argument `encrypt()` method is called."
 msgstr "公钥的位置，当调用无参数的 `encrypt()` 方法时，该公钥将被用于加密索赔或内部JWT。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:321
+#: upstream/_guides/security-jwt-build.adoc:323
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.sign.relax-key-validation"
 msgstr "Smallrye.jwt.sign.relax-key-validation"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:321
-#: upstream/_guides/security-jwt-build.adoc:324
-#: upstream/_guides/security-jwt-build.adoc:331
+#: upstream/_guides/security-jwt-build.adoc:323
+#: upstream/_guides/security-jwt-build.adoc:326
+#: upstream/_guides/security-jwt-build.adoc:333
 #, fuzzy, no-wrap
 msgid "fals"
 msgstr "虚假的"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:322
+#: upstream/_guides/security-jwt-build.adoc:324
 #, fuzzy, no-wrap
 msgid "Relax the validation of the signing keys."
 msgstr "放松对签名钥匙的验证。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:322
+#: upstream/_guides/security-jwt-build.adoc:324
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.encrypt.key"
 msgstr "Smallrye.jwt.encrypt.key"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:323
+#: upstream/_guides/security-jwt-build.adoc:325
 #, fuzzy, no-wrap
 msgid "Key value which will be used to encrypt the claims or inner JWT when a no-argument encrypt() method is called."
 msgstr "当调用无参数encrypt()方法时，将用于加密索赔或内部JWT的密钥值。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:323
+#: upstream/_guides/security-jwt-build.adoc:325
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.encrypt.key.i"
 msgstr "Smallrye.jwt.encrypt.key.i"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:324
+#: upstream/_guides/security-jwt-build.adoc:326
 #, fuzzy, no-wrap
 msgid "Encryption key identifier which is checked only when JWK keys are used."
 msgstr "加密密钥标识符，只有在使用JWK密钥时才会检查。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:324
+#: upstream/_guides/security-jwt-build.adoc:326
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.encrypt.relax-key-validation"
 msgstr "Smallrye.jwt.encrypt.relax-key-validation"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:325
+#: upstream/_guides/security-jwt-build.adoc:327
 #, fuzzy, no-wrap
 msgid "Relax the validation of the encryption keys."
 msgstr "放松对加密密钥的验证。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:325
+#: upstream/_guides/security-jwt-build.adoc:327
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.signature-algorith"
 msgstr "Smallrye.jwt.new-token.signature-algorithm"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:325
+#: upstream/_guides/security-jwt-build.adoc:327
 #, fuzzy, no-wrap
 msgid "RS256"
 msgstr "RS256"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:326
+#: upstream/_guides/security-jwt-build.adoc:328
 #, fuzzy, no-wrap
 msgid "Signature algorithm. This property will be checked if the JWT signature builder has not already set the signature algorithm."
 msgstr "签名算法。如果JWT签名生成器尚未设置签名算法，该属性将被检查。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:326
+#: upstream/_guides/security-jwt-build.adoc:328
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.key-encryption-algorith"
 msgstr "Smallrye.jwt.new-token.key-encryption-algorithm"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:326
+#: upstream/_guides/security-jwt-build.adoc:328
 #, fuzzy, no-wrap
 msgid "RSA-OAEP"
 msgstr "RSA-OAEP"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:327
+#: upstream/_guides/security-jwt-build.adoc:329
 #, fuzzy, no-wrap
 msgid "Key encryption algorithm. This property will be checked if the JWT encryption builder has not already set the key encryption algorithm."
 msgstr "密钥加密算法。如果JWT加密生成器尚未设置密钥加密算法，则将检查该属性。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:327
+#: upstream/_guides/security-jwt-build.adoc:329
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.content-encryption-algorith"
 msgstr "Smallrye.jwt.new-token.content-encryption-algorithm"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:327
+#: upstream/_guides/security-jwt-build.adoc:329
 #, fuzzy, no-wrap
 msgid "A256GCM"
 msgstr "A256GCM"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:328
+#: upstream/_guides/security-jwt-build.adoc:330
 #, fuzzy, no-wrap
 msgid "Content encryption algorithm. This property will be checked if the JWT encryption builder has not already set the content encryption algorithm."
 msgstr "内容加密算法。如果JWT加密生成器尚未设置内容加密算法，则将检查该属性。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:328
+#: upstream/_guides/security-jwt-build.adoc:330
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.lifespan"
 msgstr "Smallrye.jwt.new-token.lifespan"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:328
+#: upstream/_guides/security-jwt-build.adoc:330
 #, fuzzy, no-wrap
 msgid "300"
 msgstr "300"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:329
+#: upstream/_guides/security-jwt-build.adoc:331
 #, fuzzy, no-wrap
 msgid "Token lifespan in seconds which will be used to calculate an `exp` (expiry) claim value if this claim has not already been set."
 msgstr "代币寿命，以秒为单位，如果这个要求尚未设置，将用于计算 `exp` （到期）要求值。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:329
+#: upstream/_guides/security-jwt-build.adoc:331
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.issuer"
 msgstr "Smallrye.jwt.new-token.issuer"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:330
+#: upstream/_guides/security-jwt-build.adoc:332
 #, fuzzy, no-wrap
 msgid "Token issuer which can be used to set an `iss` (issuer) claim value if this claim has not already been set."
 msgstr "代币发行者，如果这个主张还没有被设置，可以用来设置 `iss` （发行者）主张值。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:330
+#: upstream/_guides/security-jwt-build.adoc:332
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.audienc"
 msgstr "Smallrye.jwt.new-token.audienc"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:331
+#: upstream/_guides/security-jwt-build.adoc:333
 #, fuzzy, no-wrap
 msgid "Token audience which can be used to set an `aud` (audience) claim value if this claim has not already been set."
 msgstr "代币受众，如果这个主张还没有被设置，可以用来设置 `aud` （受众）主张值。"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:331
+#: upstream/_guides/security-jwt-build.adoc:333
 #, fuzzy, no-wrap
 msgid "smallrye.jwt.new-token.override-matching-claim"
 msgstr "Smallrye.jwt.new-token.override-matching-claim"
 
 #. type: Table
-#: upstream/_guides/security-jwt-build.adoc:332
-#, no-wrap
+#: upstream/_guides/security-jwt-build.adoc:334
+#, fuzzy, no-wrap
 msgid "Set this property to `true` for `smallrye.jwt.new-token.issuer` and `smallrye.jwt.new-token.audience` values to override the already initialized `iss` (issuer) and `aud` (audience) claims."
-msgstr ""
+msgstr "对于 `smallrye.jwt.new-token.issuer` 和 `smallrye.jwt.new-token.audience` 的值，将此属性设置为 `true` ，以覆盖已经初始化的 `iss` （发行者）和 `aud` （受众）的要求。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:334
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.typ"
+msgstr "Smallrye.jwt.encrypt.key"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:334
+#, fuzzy, no-wrap
+msgid "`JKS`"
+msgstr " `JKS` "
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:335
+#, fuzzy, no-wrap
+msgid "This property can be used to customize a keystore type if either `smallrye.jwt.sign.key.location` or `smallrye.jwt.encrypt.key.location` or both of these properties point to a `KeyStore` file. If it is not set then the file name will be checked to determine the keystore type before defaulting to `JKS`."
+msgstr "如果 `smallrye.jwt.sign.key.location` 或 `smallrye.jwt.encrypt.key.location` 或这两个属性都指向 `KeyStore` 文件，该属性可用于自定义密钥库类型。如果没有设置，那么文件名将被检查以确定密钥库类型，然后默认为 `JKS` 。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:335
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.provider"
+msgstr "Smallrye.jwt.new-token.issuer"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:336
+#, fuzzy, no-wrap
+msgid "This property can be used to customize a `KeyStore` provider if `smallrye.jwt.sign.key.location` or `smallrye.jwt.encrypt.key.location` point to a `KeyStore` file."
+msgstr "如果 `smallrye.jwt.sign.key.location` 或 `smallrye.jwt.encrypt.key.location` 指向一个 `KeyStore` 文件，该属性可用于定制一个 `KeyStore` 提供者。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:336
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.passwor"
+msgstr "Smallrye.jwt.new-token.issuer"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:337
+#, fuzzy, no-wrap
+msgid "Keystore password. If `smallrye.jwt.sign.key.location` or `smallrye.jwt.encrypt.key.location` point to a `KeyStore` file then this property has be set."
+msgstr "如果 `smallrye.jwt.sign.key.location` 或/和 `smallrye.jwt.encrypt.key.location` 属性被设置，那么人们可以通过一次调用来确保现有的索赔（资源、地图、JsonObjects）。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:337
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.encrypt.key.alia"
+msgstr "Smallrye.jwt.encrypt.key.i"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:338
+#, fuzzy, no-wrap
+msgid "This property has to be set to identify a public encryption key which will be extracted from `KeyStore` from a matching certificate if `smallrye.jwt.encrypt.key.location` points to a `KeyStore` file."
+msgstr "必须设置此属性以确定公开加密密钥，如果 `smallrye.jwt.encrypt.key.location` 指向 `KeyStore` 文件，则将从匹配的证书中提取 `KeyStore` 。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:338
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.sign.key.alia"
+msgstr "Smallrye.jwt.sign.key.i"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:339
+#, fuzzy, no-wrap
+msgid "This property has to be set to identify a private signing key if `smallrye.jwt.sign.key.location` points to a `KeyStore` file."
+msgstr "如果 `smallrye.jwt.sign.key.location` 指向一个 `KeyStore` 文件，则必须设置该属性以识别一个私人签名钥匙。"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:339
+#, fuzzy, no-wrap
+msgid "smallrye.jwt.keystore.sign.key.passwor"
+msgstr "Smallrye.jwt.sign.key.i"
+
+#. type: Table
+#: upstream/_guides/security-jwt-build.adoc:340
+#, fuzzy, no-wrap
+msgid "This property may be set if a private signing key's password in `KeyStore` is different to `smallrye.jwt.keystore.password` when `smallrye.jwt.sign.key.location` points to a `KeyStore` file."
+msgstr "当 `smallrye.jwt.sign.key.location` 指向 `KeyStore` 文件时，如果 `KeyStore` 中的私人签名密钥的密码与 `smallrye.jwt.keystore.password` 不同，则可设置此属性。"
 
 #. type: Title ==
-#: upstream/_guides/security-jwt-build.adoc:334
-#, no-wrap
-msgid "References"
-msgstr ""
-
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:337
-msgid "link:https://github.com/smallrye/smallrye-jwt[SmallRye JWT]"
-msgstr ""
-
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:338
-msgid "link:https://tools.ietf.org/html/rfc7519[JSON Web Token]"
-msgstr ""
-
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:339
-msgid "link:https://tools.ietf.org/html/rfc7515[JSON Web Signature]"
-msgstr ""
-
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:340
-msgid "link:https://tools.ietf.org/html/rfc7516[JSON Web Encryption]"
-msgstr ""
-
-#. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:341
-msgid "link:https://tools.ietf.org/html/rfc7518[JSON Web Algorithms]"
-msgstr ""
-
-#. type: Plain text
 #: upstream/_guides/security-jwt-build.adoc:342
+#, fuzzy, no-wrap
+msgid "References"
+msgstr "参考文献"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:345
+#, fuzzy
+msgid "link:https://github.com/smallrye/smallrye-jwt[SmallRye JWT]"
+msgstr "link:https://github.com/smallrye/smallrye-jwt[小黑麦JWT]"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:346
+#, fuzzy
+msgid "link:https://tools.ietf.org/html/rfc7519[JSON Web Token]"
+msgstr "link:https://tools.ietf.org/html/rfc7519[JSON网络令牌]"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:347
+#, fuzzy
+msgid "link:https://tools.ietf.org/html/rfc7515[JSON Web Signature]"
+msgstr "link:https://tools.ietf.org/html/rfc7515[JSON网络签名]"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:348
+#, fuzzy
+msgid "link:https://tools.ietf.org/html/rfc7516[JSON Web Encryption]"
+msgstr "link:https://tools.ietf.org/html/rfc7516[JSON网络加密]"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:349
+#, fuzzy
+msgid "link:https://tools.ietf.org/html/rfc7518[JSON Web Algorithms]"
+msgstr "link:https://tools.ietf.org/html/rfc7518[JSON网络算法]"
+
+#. type: Plain text
+#: upstream/_guides/security-jwt-build.adoc:350
 msgid "link:https://bitbucket.org/b_c/jose4j/wiki/Home[Jose4J]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:343
+#: upstream/_guides/security-jwt-build.adoc:351
 msgid "xref:security-openid-connect.adoc[Using OpenID Connect to Protect Service Applications]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:344
+#: upstream/_guides/security-jwt-build.adoc:352
 msgid "xref:security-jwt.adoc[Using Smallrye JWT to Protect Service Applications]"
 msgstr ""
 
 #. type: Plain text
-#: upstream/_guides/security-jwt-build.adoc:344
+#: upstream/_guides/security-jwt-build.adoc:352
 msgid "xref:security.adoc[Quarkus Security]"
 msgstr ""
+
+#, fuzzy
+#~ msgid "```properties smallrye.jwt.new-token.signature-algorithm=PS256 ```"
+#~ msgstr " `` "

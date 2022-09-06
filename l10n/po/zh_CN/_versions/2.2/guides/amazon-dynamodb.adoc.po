@@ -250,7 +250,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/amazon-dynamodb.adoc:120
 msgid "First, let's create the `Fruit` bean as follows:"
-msgstr ""
+msgstr "首先，让我们创建 `Fruit` 实体类，如下所示："
 
 #. type: delimited block -
 #: upstream/_versions/2.2/guides/amazon-dynamodb.adoc:124
@@ -392,7 +392,7 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/2.2/guides/amazon-dynamodb.adoc:184
 msgid "The `@RegisterForReflection` annotation instructs Quarkus to keep the class and its members during the native compilation. More details about the `@RegisterForReflection` annotation can be found on the xref:writing-native-applications-tips.adoc#registerForReflection[native application tips] page."
-msgstr ""
+msgstr "`@RegisterForReflection` 注解用于指导Quarkus在native编译过程中保留该类和其成员。关于 `@RegisterForReflection` 注解的更多细节可以在 link:writing-native-applications-tips.html#registerForReflection[native应用程序提示] 页面找到。"
 
 #. type: Plain text
 #: upstream/_versions/2.2/guides/amazon-dynamodb.adoc:188

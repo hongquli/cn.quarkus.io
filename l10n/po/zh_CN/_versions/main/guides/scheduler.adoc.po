@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-12 15:59+0000\n"
+"POT-Creation-Date: 2022-07-28 02:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,7 +158,7 @@ msgstr ""
 #: upstream/_versions/main/guides/scheduler.adoc:75
 #, no-wrap
 msgid "Creating a scheduled job"
-msgstr ""
+msgstr "创建一个计划作业"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:78
@@ -246,11 +246,11 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:117
 msgid "The `get()` method allows retrieving the current value."
-msgstr ""
+msgstr "`get()` 方法允许检索当前值。"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:120
-msgid "Use the `@Scheduled` annotation to instruct Quarkus to run this method every 10 seconds provided a worker thread is available (Quarkus is using 10 worker threads for the scheduler). If it is not available the method invocation should be re-scheduled by default i.e it should be invoked as soon as possible. The invocation of the scheduled method does not depend on the status or result of the previous invocation."
+msgid "Use the `@Scheduled` annotation to instruct Quarkus to run this method every 10 seconds provided a worker thread is available (Quarkus is using 10 worker threads for the scheduler). If it is not available the method invocation should be re-scheduled by default i.e.  it should be invoked as soon as possible. The invocation of the scheduled method does not depend on the status or result of the previous invocation."
 msgstr ""
 
 #. type: Plain text
@@ -266,13 +266,13 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:123
 msgid "Define a job with a cron-like expression `cron.expr` which is configurable in `application.properties`."
-msgstr ""
+msgstr "在 `application.properties` 中使用类似于cron表达式的方式定义一个名为 `cron.expr` 的作业。"
 
 #. type: Title ==
 #: upstream/_versions/main/guides/scheduler.adoc:124
 #, no-wrap
 msgid "Updating the application configuration file"
-msgstr ""
+msgstr "更新该应用程序的配置文件"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:127
@@ -283,7 +283,7 @@ msgstr ""
 #: upstream/_versions/main/guides/scheduler.adoc:133
 #, no-wrap
 msgid ""
-"# By default, the syntax used for cron expressions is based on Quartz - http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html\n"
+"# By default, the syntax used for cron expressions is based on Quartz - https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html\n"
 "# You can change the syntax using the following property:\n"
 "# quarkus.scheduler.cron-type=unix\n"
 "cron.expr=*/5 * * * * ?\n"
@@ -342,12 +342,12 @@ msgstr ""
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:164
 msgid "Inject the `CounterBean`"
-msgstr ""
+msgstr "注入 `CounterBean` "
 
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:165
 msgid "Send back the current counter value"
-msgstr ""
+msgstr "返回当前计数器的值"
 
 #. type: Title ==
 #: upstream/_versions/main/guides/scheduler.adoc:166
@@ -363,7 +363,7 @@ msgstr "使用以下命令运行该应用程序:"
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:174
 msgid "In another terminal, run `curl localhost:8080/count` to check the counter value.  After a few seconds, re-run `curl localhost:8080/count` to verify the counter has been incremented."
-msgstr ""
+msgstr "在另一个终端，运行 `curl localhost:8080/count` 检查计数器的值。几秒钟后，重新运行 `curl localhost:8080/count` ，以验证计数器已被递增。"
 
 #. type: Plain text
 #: upstream/_versions/main/guides/scheduler.adoc:177
